@@ -1,0 +1,207 @@
+一：容器（Collection）
+	只能用来存放对象，容量可自动调节
+	Collection（接口）
+		List（接口）：有序可重复
+			ArrayList：底层由数组实现    LinkedList：底层由链表实现
+			Vector：线程安全，底层由数组实现
+		Set（接口）：无序不可重复 -> HashSet、TreeSet
+	Map（接口）：键值不可重复  底层实现：数组+链表
+		HashMap    TreeMap
+		// 两个内容相同的对象具有相等的 hashcode
+
+	HashTable：线程安全，同步，效率较低下； 键和值均不能为空
+	    Perperties：继承于HashTable，用于读取资源文件
+	Iterator：迭代器
+	    // 使用内部类包装访问所在容器的元素
+	    foreach()：java.lang.Iterable + iterator()
+	 	hasNext()  next()  remove() //remove()方法只能在调用 next() 方法之后使用，且只能使用一次
+		Map 的两种遍历：①entrySet()    ②keySet() + get()
+
+	比较器：
+    		实体类实现排序：Comparable + compareTo()
+    		排序比较器(解耦)：Comparator + compare()
+    		Collections.sort(List)
+
+	重要类(添加、删除、改写、查看、遍历)：
+		ArrayList    LinkedList    HashSet：重写hashcode + equals
+		HashMap(重写hashcode + equals)：keySet()/values()  entrySet()
+		Properties：做资源配置文件    HashTable(键和值均不可为空)
+		Stack    Collections(工具类)    TreeSet(元素可以排序)
+
+二：泛型（Generic）：<>
+	泛化类型，类型在使用时指定，泛型是“模板”
+
+	泛型继承、实现
+		子类为 ”富二代“，可以扩展自己的泛型类型
+		保留父类泛型 -> 子类为泛型    不保留父类泛型 -> 子类按需实现
+		子类重写父类方法的类型、使用父类的属性 -> 随父类而定
+
+		泛型的擦除：在继承(实现)或使用时没有指定具体的类型
+			类似于 Object ，不同在于编译时不做类型检查
+
+	通配符：？-> 类型不确定，用在声明变量或形参上
+		extends：泛型的上限    super：泛型的下限
+
+	泛型不支持多态，没有泛型数组，不能使用基本类型，不能在类的静态属性或方法上使用泛型
+
+三：引用分类
+    强引用：StrongReference：引用指向对象，gc 运行时不回收
+    软引用：SoftReference：gc 运行时可能回收
+    弱引用：WeakReference：gc 运行时立即回收
+    虚引用：PhantomReference：类似于无引用，主要跟踪对象被回收状态，不能单独使用，
+                            必须和引用队列(ReferenceQueue)联合使用
+
+四：同步控制与只读设置
+    同步控制：多线程并发访问集合的线程安全
+
+五：开源工具
+    Guava：
+    	只读设置：ImmutableXxx
+    	集合工具类：Lists  Sets  Maps
+    	函数式编程：解耦（Predicate、Function）
+    		工具：Collections2.filter(Collection, Predicate)：过滤器
+    			  Collection2.transfer(Collection, Function)：转换
+    			  Function.compose()：组合式函数编程
+    	# 加入约束条件：非空、长度验证等（Constraint、Preconditions...）
+    	集合的操作：交集、差集、并集
+    			intersection()  difference()  union()
+    	Multiset：Multiset<E> multiset = HashMultiset.create()    // elementSet() + count()
+    	Multimap(键值可以重复)：Multimap<E1, E2> multimap = ArrayListMultimap.create()
+    	BiMap(键和值都唯一)：BiMap<E1, E2> biMap = HashBiMap.create()  // inverse()
+    	Table<T1, T2, T3>：双键的 Map --> rowKey + columnKey + value
+    Apache commons-collection：
+    	解耦的函数式编程：
+    		Predicate 断言(判别式):
+    			EqualPredicate.equalPredicate()
+    			NotNullPredicate.notNullPredicate()
+    			UniquePredicate.uniquePredicate()
+
+    			PredicateUtils.allPredicate()  andPredicate()  anyPredicate()
+    			PredicatedXxx.predicatedXxx() // 容器判断
+    		Transformer 类型转换:
+    			new Transformer() + transform()
+    			SwitchTransformer(predicates, transformers, null)
+    			CollectionsUtils.collect(Collection, Transformer)
+    		Closure 闭包：封装特定的业务功能
+    			IfClosure.ifClosure(Predicate, Closure, Closure)
+    			WhileClosure.whileClosure(Predicate, Closure, boolean)
+    			ChainedClosure.chainedClosure(Closure, Closure)
+
+    			CollectionUtils.forAllDo(Collection, Closure)
+				集合的操作：交集、差集、并集
+			Queue 队列：
+				循环队列  CircularFifoQueue
+				只读队列  UnmodifiableQueue.unmodifiableQueue(Queue)
+				断言队列  PredicatedQueue.predicatedQueue(Queue, Predicate)
+			迭代器的扩展：
+				MapIterator：IterableMap    HashedMap
+				去重过滤器  UniqueFilterIterator(Iterator)
+				自定义过滤器  FilterIterator(Iterator, Predicate)
+				循环迭代器  LoopingIterator(Collection)
+				数组迭代器  ArrayListIterator(Iterator)
+			双向 Map（BidiMap）：
+				DualTreeBidiMap ：有序
+                DualHashBidiMap ：无序
+			包 Bag：
+				HashBag：有序    TreeBag ：无序
+				统计元素出现的次数：uniqueSet() + getCount()
+
+六：IO 流
+    流：从一端移动到另一端，分源头和目的地
+    IO 流分类：
+        流向：输入流和输出流    数据：字节流和字符流
+
+    字节流和字符流：
+        字节流：InputStream: read(byte[])  read(byte[], int, int)  close())
+                OutputStream: write(byte[])  write(byte[], int, int)  flush()  close()
+        字符流：Reader: read(byte[])  read(byte[], int, int)  close())
+                Writer: write(byte[])  write(byte[], int, int)  flush()  close()
+    操作：读取/写入文件：建立联系(选择源)-->选择流--操作(读取/写入大小)-->释放资源
+        处理流： 字节/字符缓冲流
+       *转换流： 解码：Decoder（二进制-->解码字符集）    编码：Encoder（字符-->编码字符集）
+            InputStreamReader(InputStream in, Charset cs)
+            OutputStreamWriter(OutputStream out, Charset cs)
+
+    节点(字节)流：
+        字节数组节点流：ByteArrayInputStream / ByteArrayOutputStream + toByteArray()
+            Closing a ByteArrayInputStream/ByteArrayOutputStream has no effect
+
+    处理流：
+        基本类型+String  保留数据+类型   // DataInputStream readXxx() / DataInputStream writeXxx()
+        引用类型（对象） 保留数据+类型    // ObjectInputStream readXxx() / ObjectInputStream writeXxx()
+            输入流（反序列化）    输出流（序列化）
+            先序列化后反序列化；实现序列化的对象要实现 Serializable 接口
+        打印流：PrintStream
+           *流的重定向：setIn(InputStream)  setOut(OutputStream)
+        * 装饰设计模式(类和类之间的关系)：
+            依赖（形参、局部变量）、关联（一个类作为另一个类的属性）: 分聚合和组合
+            继承（父子类关系）、实现（接口和实现类关系）
+        文件分割与合并:
+
+七：线程
+    线程：a single sequential flow of control（单一的执行路径）
+        进程中的线程共享 cpu/内存地址空间（可以访问相同变量和对象），且从同一堆中分配对象，不需要额外的通信机制(线程之间可以直接通信)
+
+    静态代理模式：Thread 是代理类
+
+    单例设计模式：一个类只有一个对象
+        懒汉式：类的构造器私有化
+            声明一个私有的静态变量并提供一个访问该静态变量的方法（变量若不存在，则新建）
+        饿汉式：类的构造器私有化
+            声明一个私有的静态变量并同时创建该对象
+            提供一个访问该静态变量的方法，需确保该变量存在
+
+    通过 Callable 接口常见多线程：
+        call() 方法可以抛出异常  run() 方法不能抛出异常
+        Callable 的任务执行后可以有返回值（Future 对象）    Future 对象是异步计算的结果，提供了对任务的相关操作方法
+        1) 实现 Callable 接口 + 重写 call 方法
+        2) 借助执行调度服务 ExecutorService，获取 Future 对象
+        3) 获取返回值：future.get()
+        4) 停止服务：executorService.shutdownNow()
+
+    线程的阻塞：
+        join()：等待当前线程的终止
+        yield()：暂停正在执行的线程对象，并执行其他的线程
+        sleep()：当前线程进入休眠，不释放锁
+
+    线程同步：同步块、同步方法 synchronized
+    任务调度：Timer 定时器类    TimerTask  任务类
+    自学：juc、quartz
+
+八：网络编程
+    基本概念：网络  地址  端口号（同一协议下的端口不可重复）  资源定位：URL
+        数据传输：*协议（TCP：传输控制协议、UDP：用户数据报协议）+ 数据（封装、拆分）
+        类：InetAddress  InetSocketAddress  URL
+            TCP: ServerSocket  Socket
+            UDP: DatagramSocket  DatagramPacket
+    UDP 通信
+        特点：以数据为中心、非面向连接、不安全、效率高
+        DatagramSocket  DatagramPacket
+        客户端：
+           创建客户端（指定端口） + 准备数据（字节数组） + 数据打包（DatagramSocket+服务器地址和端口） + 发送 + 释放资源
+        服务端：
+           创建服务端（指定端口）+ 准备接收容器（字节数组） + 数据包（接收数据） + 分析 + 释放资源
+
+    TCP 通信
+        特点：面向连接（请求 + 响应）
+
+九：HttpServer
+    Http 协议规范：
+        请求方式 + URI + HTTP 协议版本
+        请求头
+        请求正文（post 请求独有）
+
+        HTTP 协议版本 + 状态码 + 描述
+        响应头
+        响应正文（html 文本）
+
+    服务器 xml 配置文件的解析：
+    两种解析方法:
+        ①SAX  基于事件流的解析
+        ②DOM基于 XML 文档树结构的解析
+        常见的四种:DOM  SAX  DOM4J  JDOM
+        sax 步骤：
+        1、获得解析工厂  SAXParserFactory
+        2、工厂获取解析器  SAXParser
+        3、加载文档 Document 注册处理器
+    *扩展：基于 SAX 解析web.xml文件（servlet 的配置）
