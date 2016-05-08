@@ -2,7 +2,7 @@
 	只能用来存放对象，容量可自动调节
 	Collection（接口）
 		List（接口）：有序可重复
-			ArrayList：底层由数组实现    LinkedList：底层由链表实现
+			ArrayList：底层由数组实现      LinkedList：底层由链表实现
 			Vector：线程安全，底层由数组实现
 		Set（接口）：无序不可重复 -> HashSet、TreeSet
 	Map（接口）：键值不可重复  底层实现：数组+链表
