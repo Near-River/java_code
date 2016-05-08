@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="342.00000000000006" y="110.5">pro.gof.action.observer_pattern.State</node>
+    <node x="414.5" y="312.5">pro.gof.action.observer_pattern.ObserverA</node>
+    <node x="275.03571428571433" y="463.0">pro.gof.action.observer_pattern.Client</node>
+    <node x="170.0357142857143" y="299.0">pro.gof.action.observer_pattern.ConcreteSubject</node>
+    <node x="0.0" y="110.0">pro.gof.action.observer_pattern.Subject</node>
+    <node x="138.00000000000003" y="0.0">pro.gof.action.observer_pattern.Observer</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="pro.gof.action.observer_pattern.ConcreteSubject" target="pro.gof.action.observer_pattern.Subject">
+      <point x="-43.0" y="-57.0" />
+      <point x="213.0357142857143" y="274.0" />
+      <point x="161.0" y="274.0" />
+      <point x="0.0" y="69.5" />
+    </edge>
+    <edge source="pro.gof.action.observer_pattern.Client" target="pro.gof.action.observer_pattern.ObserverA">
+      <point x="36.0" y="-30.0" />
+      <point x="383.03571428571433" y="438.0" />
+      <point x="490.5" y="438.0" />
+      <point x="0.0" y="43.5" />
+    </edge>
+    <edge source="pro.gof.action.observer_pattern.ConcreteSubject" target="pro.gof.action.observer_pattern.State">
+      <point x="43.0" y="-57.0" />
+      <point x="299.03571428571433" y="274.0" />
+      <point x="372.00000000000006" y="274.0" />
+      <point x="-30.0" y="69.0" />
+    </edge>
+    <edge source="pro.gof.action.observer_pattern.Subject" target="pro.gof.action.observer_pattern.Observer">
+      <point x="-80.5" y="-69.5" />
+      <point x="80.5" y="85.0" />
+      <point x="172.50000000000003" y="85.0" />
+      <point x="-69.0" y="30.0" />
+    </edge>
+    <edge source="pro.gof.action.observer_pattern.Client" target="pro.gof.action.observer_pattern.ConcreteSubject">
+      <point x="-36.0" y="-30.0" />
+      <point x="311.03571428571433" y="438.0" />
+      <point x="256.03571428571433" y="438.0" />
+      <point x="0.0" y="57.0" />
+    </edge>
+    <edge source="pro.gof.action.observer_pattern.ObserverA" target="pro.gof.action.observer_pattern.Observer">
+      <point x="38.0" y="-43.5" />
+      <point x="528.5" y="274.0" />
+      <point x="510.75" y="274.0" />
+      <point x="510.75" y="85.0" />
+      <point x="310.5" y="85.0" />
+      <point x="68.99999999999997" y="30.0" />
+    </edge>
+    <edge source="pro.gof.action.observer_pattern.ObserverA" target="pro.gof.action.observer_pattern.State">
+      <point x="-38.0" y="-43.5" />
+      <point x="452.5" y="274.0" />
+      <point x="432.0" y="274.0" />
+      <point x="30.0" y="69.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="283.5" y="261.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Inner Classes</Category>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

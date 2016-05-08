@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="454.5" y="150.5">pro.gof.structure.bridge_pattern.Lenovo</node>
+    <node x="219.375" y="438.0">pro.gof.structure.bridge_pattern.TestBridgePattern</node>
+    <node x="210.875" y="137.0">pro.gof.structure.bridge_pattern.Computer</node>
+    <node x="100.625" y="301.0">pro.gof.structure.bridge_pattern.DeskTop</node>
+    <node x="314.625" y="301.0">pro.gof.structure.bridge_pattern.LapTop</node>
+    <node x="0.0" y="150.5">pro.gof.structure.bridge_pattern.Dell</node>
+    <node x="228.375" y="0.0">pro.gof.structure.bridge_pattern.Brand</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="pro.gof.structure.bridge_pattern.Lenovo" target="pro.gof.structure.bridge_pattern.Brand">
+      <point x="0.0" y="-43.5" />
+      <point x="528.5" y="112.0" />
+      <point x="351.70833333333337" y="112.0" />
+      <point x="49.33333333333337" y="43.5" />
+    </edge>
+    <edge source="pro.gof.structure.bridge_pattern.TestBridgePattern" target="pro.gof.structure.bridge_pattern.Dell">
+      <point x="-62.25" y="-30.0" />
+      <point x="240.125" y="418.0" />
+      <point x="74.0" y="418.0" />
+      <point x="0.0" y="43.5" />
+    </edge>
+    <edge source="pro.gof.structure.bridge_pattern.TestBridgePattern" target="pro.gof.structure.bridge_pattern.Lenovo">
+      <point x="62.25" y="-30.0" />
+      <point x="364.625" y="418.0" />
+      <point x="528.5" y="418.0" />
+      <point x="0.0" y="43.5" />
+    </edge>
+    <edge source="pro.gof.structure.bridge_pattern.TestBridgePattern" target="pro.gof.structure.bridge_pattern.LapTop">
+      <point x="20.75" y="-30.0" />
+      <point x="323.125" y="408.0" />
+      <point x="407.125" y="408.0" />
+      <point x="0.0" y="43.5" />
+    </edge>
+    <edge source="pro.gof.structure.bridge_pattern.DeskTop" target="pro.gof.structure.bridge_pattern.Computer">
+      <point x="0.0" y="-43.5" />
+      <point x="197.625" y="276.0" />
+      <point x="256.625" y="276.0" />
+      <point x="-45.75" y="57.0" />
+    </edge>
+    <edge source="pro.gof.structure.bridge_pattern.TestBridgePattern" target="pro.gof.structure.bridge_pattern.DeskTop">
+      <point x="-20.75" y="-30.0" />
+      <point x="281.625" y="408.0" />
+      <point x="197.625" y="408.0" />
+      <point x="0.0" y="43.5" />
+    </edge>
+    <edge source="pro.gof.structure.bridge_pattern.Dell" target="pro.gof.structure.bridge_pattern.Brand">
+      <point x="0.0" y="-43.5" />
+      <point x="74.0" y="112.0" />
+      <point x="253.04166666666666" y="112.0" />
+      <point x="-49.33333333333334" y="43.5" />
+    </edge>
+    <edge source="pro.gof.structure.bridge_pattern.Computer" target="pro.gof.structure.bridge_pattern.Brand">
+      <point x="0.0" y="-57.0" />
+      <point x="0.0" y="43.5" />
+    </edge>
+    <edge source="pro.gof.structure.bridge_pattern.LapTop" target="pro.gof.structure.bridge_pattern.Computer">
+      <point x="0.0" y="-43.5" />
+      <point x="407.125" y="276.0" />
+      <point x="348.125" y="276.0" />
+      <point x="45.75" y="57.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="301.5" y="249.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Inner Classes</Category>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

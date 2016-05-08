@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="274.2083333333333" y="274.0">pro.gof.action.state_pattern.Client</node>
+    <node x="0.0" y="110.0">pro.gof.action.state_pattern.Context</node>
+    <node x="276.5" y="0.0">pro.gof.action.state_pattern.State</node>
+    <node x="530.0" y="137.0">pro.gof.action.state_pattern.FreeState</node>
+    <node x="192.0" y="137.0">pro.gof.action.state_pattern.CheckedState</node>
+    <node x="361.0" y="137.0">pro.gof.action.state_pattern.BookedState</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="pro.gof.action.state_pattern.FreeState" target="pro.gof.action.state_pattern.State">
+      <point x="0.0" y="-30.0" />
+      <point x="604.5" y="80.0" />
+      <point x="406.875" y="80.0" />
+      <point x="55.875" y="30.0" />
+    </edge>
+    <edge source="pro.gof.action.state_pattern.Context" target="pro.gof.action.state_pattern.State">
+      <point x="0.0" y="-57.0" />
+      <point x="86.0" y="80.0" />
+      <point x="295.125" y="80.0" />
+      <point x="-55.875" y="30.0" />
+    </edge>
+    <edge source="pro.gof.action.state_pattern.CheckedState" target="pro.gof.action.state_pattern.State">
+      <point x="0.0" y="-30.0" />
+      <point x="266.5" y="90.0" />
+      <point x="332.375" y="90.0" />
+      <point x="-18.625" y="30.0" />
+    </edge>
+    <edge source="pro.gof.action.state_pattern.Client" target="pro.gof.action.state_pattern.FreeState">
+      <point x="36.0" y="-30.0" />
+      <point x="382.2083333333333" y="249.0" />
+      <point x="604.5" y="249.0" />
+      <point x="0.0" y="30.0" />
+    </edge>
+    <edge source="pro.gof.action.state_pattern.BookedState" target="pro.gof.action.state_pattern.State">
+      <point x="0.0" y="-30.0" />
+      <point x="435.5" y="90.0" />
+      <point x="369.625" y="90.0" />
+      <point x="18.625" y="30.0" />
+    </edge>
+    <edge source="pro.gof.action.state_pattern.Client" target="pro.gof.action.state_pattern.Context">
+      <point x="-36.0" y="-30.0" />
+      <point x="310.2083333333333" y="249.0" />
+      <point x="86.0" y="249.0" />
+      <point x="0.0" y="57.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="339.5" y="167.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

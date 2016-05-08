@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="641.0" y="0.0">pro.gof.structure.facade_pattern.质检局</node>
+    <node x="337.0" y="220.0">pro.gof.structure.facade_pattern.RegisterFacade</node>
+    <node x="0.0" y="110.0">pro.gof.structure.facade_pattern.海淀税务局</node>
+    <node x="422.0" y="110.0">pro.gof.structure.facade_pattern.中国工商银行</node>
+    <node x="0.0" y="0.0">pro.gof.structure.facade_pattern.税务局</node>
+    <node x="331.0" y="330.0">pro.gof.structure.facade_pattern.TestFacadePattern</node>
+    <node x="217.00000000000003" y="0.0">pro.gof.structure.facade_pattern.工商局</node>
+    <node x="217.00000000000003" y="110.0">pro.gof.structure.facade_pattern.海淀区工商局</node>
+    <node x="422.0" y="0.0">pro.gof.structure.facade_pattern.银行</node>
+    <node x="641.0" y="110.0">pro.gof.structure.facade_pattern.海淀质检局</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="pro.gof.structure.facade_pattern.海淀区工商局" target="pro.gof.structure.facade_pattern.工商局">
+      <point x="0.0" y="-30.0" />
+      <point x="0.0" y="30.0" />
+    </edge>
+    <edge source="pro.gof.structure.facade_pattern.RegisterFacade" target="pro.gof.structure.facade_pattern.中国工商银行">
+      <point x="19.625" y="-30.0" />
+      <point x="435.125" y="190.0" />
+      <point x="521.5" y="190.0" />
+      <point x="0.0" y="30.0" />
+    </edge>
+    <edge source="pro.gof.structure.facade_pattern.中国工商银行" target="pro.gof.structure.facade_pattern.银行">
+      <point x="0.0" y="-30.0" />
+      <point x="0.0" y="30.0" />
+    </edge>
+    <edge source="pro.gof.structure.facade_pattern.海淀质检局" target="pro.gof.structure.facade_pattern.质检局">
+      <point x="0.0" y="-30.0" />
+      <point x="0.0" y="30.0" />
+    </edge>
+    <edge source="pro.gof.structure.facade_pattern.RegisterFacade" target="pro.gof.structure.facade_pattern.海淀质检局">
+      <point x="58.875" y="-30.0" />
+      <point x="474.375" y="200.0" />
+      <point x="761.0" y="200.0" />
+      <point x="0.0" y="30.0" />
+    </edge>
+    <edge source="pro.gof.structure.facade_pattern.RegisterFacade" target="pro.gof.structure.facade_pattern.海淀区工商局">
+      <point x="-19.625" y="-30.0" />
+      <point x="395.875" y="190.0" />
+      <point x="309.5" y="190.0" />
+      <point x="0.0" y="30.0" />
+    </edge>
+    <edge source="pro.gof.structure.facade_pattern.海淀税务局" target="pro.gof.structure.facade_pattern.税务局">
+      <point x="0.0" y="-30.0" />
+      <point x="0.0" y="30.0" />
+    </edge>
+    <edge source="pro.gof.structure.facade_pattern.TestFacadePattern" target="pro.gof.structure.facade_pattern.RegisterFacade">
+      <point x="0.0" y="-30.0" />
+      <point x="0.0" y="30.0" />
+    </edge>
+    <edge source="pro.gof.structure.facade_pattern.RegisterFacade" target="pro.gof.structure.facade_pattern.海淀税务局">
+      <point x="-58.875" y="-30.0" />
+      <point x="356.625" y="200.0" />
+      <point x="98.5" y="200.0" />
+      <point x="0.0" y="30.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="440.5" y="195.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Inner Classes</Category>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

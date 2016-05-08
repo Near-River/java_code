@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="253.671875" y="0.0">pro.gof.action.memento_pattern.memeto.Student</node>
+    <node x="345.5" y="596.0">pro.gof.action.memento_pattern.Client</node>
+    <node x="0.0" y="406.0">pro.gof.action.memento_pattern.memeto.StuOriginator</node>
+    <node x="305.0" y="446.0">pro.gof.action.memento_pattern.memeto.CareTaker</node>
+    <node x="258.5" y="242.0">pro.gof.action.memento_pattern.memeto.StuMemento</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="pro.gof.action.memento_pattern.memeto.StuOriginator" target="pro.gof.action.memento_pattern.memeto.StuMemento">
+      <point x="71.25" y="-70.0" />
+      <point x="213.75" y="381.0" />
+      <point x="311.5" y="381.0" />
+      <point x="-53.0" y="57.0" />
+    </edge>
+    <edge source="pro.gof.action.memento_pattern.memeto.StuMemento" target="pro.gof.action.memento_pattern.memeto.Student">
+      <point x="53.0" y="-57.0" />
+      <point x="417.5" y="217.0" />
+      <point x="394.921875" y="217.0" />
+      <point x="28.25" y="96.0" />
+    </edge>
+    <edge source="pro.gof.action.memento_pattern.Client" target="pro.gof.action.memento_pattern.memeto.CareTaker">
+      <point x="0.0" y="-30.0" />
+      <point x="0.0" y="30.0" />
+    </edge>
+    <edge source="pro.gof.action.memento_pattern.memeto.StuOriginator" target="pro.gof.action.memento_pattern.memeto.Student">
+      <point x="-71.25" y="-70.0" />
+      <point x="71.25" y="217.0" />
+      <point x="281.921875" y="217.0" />
+      <point x="-84.75" y="96.0" />
+    </edge>
+    <edge source="pro.gof.action.memento_pattern.Client" target="pro.gof.action.memento_pattern.memeto.Student">
+      <point x="48.0" y="-30.0" />
+      <point x="465.5" y="571.0" />
+      <point x="540.5" y="571.0" />
+      <point x="540.5" y="217.0" />
+      <point x="451.421875" y="217.0" />
+      <point x="84.75" y="96.0" />
+    </edge>
+    <edge source="pro.gof.action.memento_pattern.memeto.CareTaker" target="pro.gof.action.memento_pattern.memeto.StuMemento">
+      <point x="0.0" y="-30.0" />
+      <point x="53.0" y="57.0" />
+    </edge>
+    <edge source="pro.gof.action.memento_pattern.Client" target="pro.gof.action.memento_pattern.memeto.StuOriginator">
+      <point x="-48.0" y="-30.0" />
+      <point x="369.5" y="571.0" />
+      <point x="142.5" y="571.0" />
+      <point x="0.0" y="70.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="283.5" y="328.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Inner Classes</Category>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="0.0" y="110.0">pro.gof.action.strategy_pattern.Context</node>
+    <node x="746.0" y="137.0">pro.gof.action.strategy_pattern.NewCustomerManyStrategy</node>
+    <node x="415.0357142857143" y="274.0">pro.gof.action.strategy_pattern.Client</node>
+    <node x="1005.9999999999999" y="137.0">pro.gof.action.strategy_pattern.OldCustomerFewStrategy</node>
+    <node x="493.0" y="0.0">pro.gof.action.strategy_pattern.Strategy</node>
+    <node x="240.0" y="137.0">pro.gof.action.strategy_pattern.OldCustomerManyStrategy</node>
+    <node x="493.0" y="137.0">pro.gof.action.strategy_pattern.NewCustomerFewStrategy</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="pro.gof.action.strategy_pattern.OldCustomerManyStrategy" target="pro.gof.action.strategy_pattern.Strategy">
+      <point x="0.0" y="-30.0" />
+      <point x="356.5" y="90.0" />
+      <point x="562.9" y="90.0" />
+      <point x="-46.60000000000002" y="30.0" />
+    </edge>
+    <edge source="pro.gof.action.strategy_pattern.OldCustomerFewStrategy" target="pro.gof.action.strategy_pattern.Strategy">
+      <point x="0.0" y="-30.0" />
+      <point x="1122.5" y="80.0" />
+      <point x="702.6999999999999" y="80.0" />
+      <point x="93.19999999999993" y="30.0" />
+    </edge>
+    <edge source="pro.gof.action.strategy_pattern.Context" target="pro.gof.action.strategy_pattern.Strategy">
+      <point x="0.0" y="-57.0" />
+      <point x="110.0" y="80.0" />
+      <point x="516.3" y="80.0" />
+      <point x="-93.20000000000005" y="30.0" />
+    </edge>
+    <edge source="pro.gof.action.strategy_pattern.NewCustomerManyStrategy" target="pro.gof.action.strategy_pattern.Strategy">
+      <point x="0.0" y="-30.0" />
+      <point x="866.0" y="90.0" />
+      <point x="656.0999999999999" y="90.0" />
+      <point x="46.59999999999991" y="30.0" />
+    </edge>
+    <edge source="pro.gof.action.strategy_pattern.NewCustomerFewStrategy" target="pro.gof.action.strategy_pattern.Strategy">
+      <point x="0.0" y="-30.0" />
+      <point x="0.0" y="30.0" />
+    </edge>
+    <edge source="pro.gof.action.strategy_pattern.Client" target="pro.gof.action.strategy_pattern.Context">
+      <point x="-36.0" y="-30.0" />
+      <point x="451.0357142857143" y="249.0" />
+      <point x="110.0" y="249.0" />
+      <point x="0.0" y="57.0" />
+    </edge>
+    <edge source="pro.gof.action.strategy_pattern.Client" target="pro.gof.action.strategy_pattern.NewCustomerManyStrategy">
+      <point x="36.0" y="-30.0" />
+      <point x="523.0357142857142" y="249.0" />
+      <point x="866.0" y="249.0" />
+      <point x="0.0" y="30.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="619.5" y="167.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Inner Classes</Category>
+    <Category>Properties</Category>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

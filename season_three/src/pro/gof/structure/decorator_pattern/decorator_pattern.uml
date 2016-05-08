@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="169.71428571428572" y="0.0">pro.gof.structure.decorator_pattern.ICar</node>
+    <node x="0.0" y="274.0">pro.gof.structure.decorator_pattern.FlyCar</node>
+    <node x="347.75" y="137.0">pro.gof.structure.decorator_pattern.Car</node>
+    <node x="128.0" y="110.0">pro.gof.structure.decorator_pattern.SuperCar</node>
+    <node x="202.2857142857143" y="437.0">pro.gof.structure.decorator_pattern.TestDecoratorPattern</node>
+    <node x="200.0" y="274.0">pro.gof.structure.decorator_pattern.SwimCar</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="pro.gof.structure.decorator_pattern.SuperCar" target="pro.gof.structure.decorator_pattern.ICar">
+      <point x="-37.0" y="-57.0" />
+      <point x="165.0" y="85.0" />
+      <point x="193.21428571428572" y="85.0" />
+      <point x="-47.0" y="30.0" />
+    </edge>
+    <edge source="pro.gof.structure.decorator_pattern.SwimCar" target="pro.gof.structure.decorator_pattern.SuperCar">
+      <point x="0.0" y="-56.5" />
+      <point x="299.5" y="249.0" />
+      <point x="239.0" y="249.0" />
+      <point x="37.0" y="57.0" />
+    </edge>
+    <edge source="pro.gof.structure.decorator_pattern.Car" target="pro.gof.structure.decorator_pattern.ICar">
+      <point x="0.0" y="-30.0" />
+      <point x="418.25" y="85.0" />
+      <point x="287.2142857142857" y="85.0" />
+      <point x="47.0" y="30.0" />
+    </edge>
+    <edge source="pro.gof.structure.decorator_pattern.TestDecoratorPattern" target="pro.gof.structure.decorator_pattern.Car">
+      <point x="64.0" y="-30.0" />
+      <point x="362.28571428571433" y="412.0" />
+      <point x="418.25" y="412.0" />
+      <point x="0.0" y="30.0" />
+    </edge>
+    <edge source="pro.gof.structure.decorator_pattern.TestDecoratorPattern" target="pro.gof.structure.decorator_pattern.FlyCar">
+      <point x="-64.0" y="-30.0" />
+      <point x="234.2857142857143" y="412.0" />
+      <point x="90.0" y="412.0" />
+      <point x="0.0" y="56.5" />
+    </edge>
+    <edge source="pro.gof.structure.decorator_pattern.FlyCar" target="pro.gof.structure.decorator_pattern.SuperCar">
+      <point x="0.0" y="-56.5" />
+      <point x="90.0" y="249.0" />
+      <point x="165.0" y="249.0" />
+      <point x="-37.0" y="57.0" />
+    </edge>
+    <edge source="pro.gof.structure.decorator_pattern.TestDecoratorPattern" target="pro.gof.structure.decorator_pattern.SwimCar">
+      <point x="0.0" y="-30.0" />
+      <point x="298.28571428571433" y="412.0" />
+      <point x="299.5" y="412.0" />
+      <point x="0.0" y="56.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="244.5" y="248.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Inner Classes</Category>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

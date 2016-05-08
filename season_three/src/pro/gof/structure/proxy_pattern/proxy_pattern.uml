@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>pro.gof.structure.proxy_pattern</OriginalElement>
+  <nodes>
+    <node x="94.75" y="188.0">pro.gof.structure.proxy_pattern.RealStar</node>
+    <node x="18.375" y="0.0">pro.gof.structure.proxy_pattern.Star</node>
+    <node x="138.75" y="618.0">pro.gof.structure.proxy_pattern.Client</node>
+    <node x="0.0" y="376.0">pro.gof.structure.proxy_pattern.ProxyStar</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="pro.gof.structure.proxy_pattern.Client" target="pro.gof.structure.proxy_pattern.ProxyStar">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="pro.gof.structure.proxy_pattern.ProxyStar" target="pro.gof.structure.proxy_pattern.RealStar">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="pro.gof.structure.proxy_pattern.RealStar" target="pro.gof.structure.proxy_pattern.Star">
+      <point x="0.0" y="-69.0" />
+      <point x="221.25" y="163.0" />
+      <point x="208.125" y="163.0" />
+      <point x="63.25" y="69.0" />
+    </edge>
+    <edge source="pro.gof.structure.proxy_pattern.ProxyStar" target="pro.gof.structure.proxy_pattern.Star">
+      <point x="-68.5" y="-96.0" />
+      <point x="68.5" y="163.0" />
+      <point x="81.625" y="163.0" />
+      <point x="-63.25" y="69.0" />
+    </edge>
+    <edge source="pro.gof.structure.proxy_pattern.Client" target="pro.gof.structure.proxy_pattern.RealStar">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="174.0" y="339.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Constructors</Category>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

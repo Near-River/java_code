@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="21.50000000000003" y="0.0">pro.gof.structure.adapter_pattern.USB</node>
+    <node x="318.875" y="123.5">pro.gof.structure.adapter_pattern.Keyboard</node>
+    <node x="168.875" y="110.0">pro.gof.structure.adapter_pattern.Adapter</node>
+    <node x="253.62500000000003" y="0.0">pro.gof.structure.adapter_pattern.Out</node>
+    <node x="0.0" y="110.0">pro.gof.structure.adapter_pattern.Computer</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="pro.gof.structure.adapter_pattern.Adapter" target="pro.gof.structure.adapter_pattern.Out">
+      <point x="32.5" y="-43.5" />
+      <point x="266.375" y="85.0" />
+      <point x="292.625" y="85.0" />
+      <point x="-39.0" y="30.0" />
+    </edge>
+    <edge source="pro.gof.structure.adapter_pattern.Keyboard" target="pro.gof.structure.adapter_pattern.Out">
+      <point x="0.0" y="-30.0" />
+      <point x="396.875" y="85.0" />
+      <point x="370.625" y="85.0" />
+      <point x="39.0" y="30.0" />
+    </edge>
+    <edge source="pro.gof.structure.adapter_pattern.Computer" target="pro.gof.structure.adapter_pattern.USB">
+      <point x="0.0" y="-43.5" />
+      <point x="66.5" y="85.0" />
+      <point x="73.75000000000003" y="85.0" />
+      <point x="-52.25" y="30.0" />
+    </edge>
+    <edge source="pro.gof.structure.adapter_pattern.Adapter" target="pro.gof.structure.adapter_pattern.USB">
+      <point x="-32.5" y="-43.5" />
+      <point x="201.375" y="85.0" />
+      <point x="178.25000000000003" y="85.0" />
+      <point x="52.25" y="30.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="237.5" y="98.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Inner Classes</Category>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

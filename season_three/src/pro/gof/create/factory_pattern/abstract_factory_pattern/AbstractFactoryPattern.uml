@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="968.25" y="179.0">pro.gof.create.factory_pattern.abstract_factory_pattern.LowerEngine</node>
+    <node x="205.99038461538464" y="328.0">pro.gof.create.factory_pattern.abstract_factory_pattern.LuxureCarFactory</node>
+    <node x="522.25" y="166.0">pro.gof.create.factory_pattern.abstract_factory_pattern.CarFactory</node>
+    <node x="1134.625" y="192.0">pro.gof.create.factory_pattern.abstract_factory_pattern.LowerSeat</node>
+    <node x="175.25000000000006" y="179.0">pro.gof.create.factory_pattern.abstract_factory_pattern.LuxureEnigne</node>
+    <node x="396.3365384615385" y="13.0">pro.gof.create.factory_pattern.abstract_factory_pattern.Tyre</node>
+    <node x="339.25000000000006" y="192.0">pro.gof.create.factory_pattern.abstract_factory_pattern.LuxurySeat</node>
+    <node x="230.49038461538464" y="490.0">pro.gof.create.factory_pattern.abstract_factory_pattern.AbstractFactoryPattern</node>
+    <node x="571.5865384615386" y="0.0">pro.gof.create.factory_pattern.abstract_factory_pattern.Engine</node>
+    <node x="0.0" y="192.0">pro.gof.create.factory_pattern.abstract_factory_pattern.LuxuryTyre</node>
+    <node x="836.0961538461539" y="328.0">pro.gof.create.factory_pattern.abstract_factory_pattern.LowerFactory</node>
+    <node x="794.25" y="192.0">pro.gof.create.factory_pattern.abstract_factory_pattern.LowerTyre</node>
+    <node x="737.9615384615386" y="13.0">pro.gof.create.factory_pattern.abstract_factory_pattern.Seat</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="pro.gof.create.factory_pattern.abstract_factory_pattern.LuxurySeat" target="pro.gof.create.factory_pattern.abstract_factory_pattern.Seat">
+      <point x="0.0" y="-30.0" />
+      <point x="420.75000000000006" y="146.0" />
+      <point x="778.7115384615386" y="146.0" />
+      <point x="-40.75" y="30.0" />
+    </edge>
+    <edge source="pro.gof.create.factory_pattern.abstract_factory_pattern.LowerFactory" target="pro.gof.create.factory_pattern.abstract_factory_pattern.LowerTyre">
+      <point x="-31.5" y="-56.0" />
+      <point x="930.5961538461539" y="298.0" />
+      <point x="871.25" y="298.0" />
+      <point x="0.0" y="30.0" />
+    </edge>
+    <edge source="pro.gof.create.factory_pattern.abstract_factory_pattern.LuxureCarFactory" target="pro.gof.create.factory_pattern.abstract_factory_pattern.LuxuryTyre">
+      <point x="-94.5" y="-56.0" />
+      <point x="237.49038461538464" y="308.0" />
+      <point x="77.0" y="308.0" />
+      <point x="0.0" y="30.0" />
+    </edge>
+    <edge source="pro.gof.create.factory_pattern.abstract_factory_pattern.LuxureEnigne" target="pro.gof.create.factory_pattern.abstract_factory_pattern.Engine">
+      <point x="0.0" y="-43.0" />
+      <point x="247.25000000000006" y="136.0" />
+      <point x="607.5865384615386" y="136.0" />
+      <point x="-36.0" y="43.0" />
+    </edge>
+    <edge source="pro.gof.create.factory_pattern.abstract_factory_pattern.LowerEngine" target="pro.gof.create.factory_pattern.abstract_factory_pattern.Engine">
+      <point x="0.0" y="-43.0" />
+      <point x="1040.25" y="116.0" />
+      <point x="679.5865384615386" y="116.0" />
+      <point x="36.0" y="43.0" />
+    </edge>
+    <edge source="pro.gof.create.factory_pattern.abstract_factory_pattern.LowerTyre" target="pro.gof.create.factory_pattern.abstract_factory_pattern.Tyre">
+      <point x="0.0" y="-30.0" />
+      <point x="871.25" y="126.0" />
+      <point x="511.8365384615385" y="126.0" />
+      <point x="38.5" y="30.0" />
+    </edge>
+    <edge source="pro.gof.create.factory_pattern.abstract_factory_pattern.AbstractFactoryPattern" target="pro.gof.create.factory_pattern.abstract_factory_pattern.LuxureCarFactory">
+      <point x="0.0" y="-30.0" />
+      <point x="0.0" y="56.0" />
+    </edge>
+    <edge source="pro.gof.create.factory_pattern.abstract_factory_pattern.LuxureCarFactory" target="pro.gof.create.factory_pattern.abstract_factory_pattern.LuxureEnigne">
+      <point x="-31.5" y="-56.0" />
+      <point x="300.49038461538464" y="308.0" />
+      <point x="247.25000000000006" y="308.0" />
+      <point x="0.0" y="43.0" />
+    </edge>
+    <edge source="pro.gof.create.factory_pattern.abstract_factory_pattern.LuxuryTyre" target="pro.gof.create.factory_pattern.abstract_factory_pattern.Tyre">
+      <point x="0.0" y="-30.0" />
+      <point x="77.0" y="126.0" />
+      <point x="434.8365384615385" y="126.0" />
+      <point x="-38.5" y="30.0" />
+    </edge>
+    <edge source="pro.gof.create.factory_pattern.abstract_factory_pattern.LowerFactory" target="pro.gof.create.factory_pattern.abstract_factory_pattern.LowerEngine">
+      <point x="31.5" y="-56.0" />
+      <point x="993.5961538461539" y="308.0" />
+      <point x="1040.25" y="308.0" />
+      <point x="0.0" y="43.0" />
+    </edge>
+    <edge source="pro.gof.create.factory_pattern.abstract_factory_pattern.LuxureCarFactory" target="pro.gof.create.factory_pattern.abstract_factory_pattern.CarFactory">
+      <point x="94.5" y="-56.0" />
+      <point x="426.49038461538464" y="308.0" />
+      <point x="585.25" y="308.0" />
+      <point x="-63.0" y="56.0" />
+    </edge>
+    <edge source="pro.gof.create.factory_pattern.abstract_factory_pattern.LowerSeat" target="pro.gof.create.factory_pattern.abstract_factory_pattern.Seat">
+      <point x="0.0" y="-30.0" />
+      <point x="1216.125" y="106.0" />
+      <point x="860.2115384615386" y="106.0" />
+      <point x="40.75" y="30.0" />
+    </edge>
+    <edge source="pro.gof.create.factory_pattern.abstract_factory_pattern.LowerFactory" target="pro.gof.create.factory_pattern.abstract_factory_pattern.CarFactory">
+      <point x="-94.5" y="-56.0" />
+      <point x="867.5961538461539" y="308.0" />
+      <point x="711.25" y="308.0" />
+      <point x="63.0" y="56.0" />
+    </edge>
+    <edge source="pro.gof.create.factory_pattern.abstract_factory_pattern.LuxureCarFactory" target="pro.gof.create.factory_pattern.abstract_factory_pattern.LuxurySeat">
+      <point x="31.5" y="-56.0" />
+      <point x="363.49038461538464" y="308.0" />
+      <point x="420.75000000000006" y="308.0" />
+      <point x="0.0" y="30.0" />
+    </edge>
+    <edge source="pro.gof.create.factory_pattern.abstract_factory_pattern.LowerFactory" target="pro.gof.create.factory_pattern.abstract_factory_pattern.LowerSeat">
+      <point x="94.5" y="-56.0" />
+      <point x="1056.5961538461538" y="308.0" />
+      <point x="1216.125" y="308.0" />
+      <point x="0.0" y="30.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.8300455235204856" x="649.0" y="275.0" />
+  <SelectedNodes>
+    <node>pro.gof.create.factory_pattern.abstract_factory_pattern.Engine</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Constructors</Category>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
