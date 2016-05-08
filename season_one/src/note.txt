@@ -1,0 +1,96 @@
+﻿一：
+	JDK -- Java Development kit
+	JRE -- Java Runtime Environment
+	JVM -- Java Virtual Machine
+	JVM规范：一个虚拟的用于执行bytecodes（字节码）的计算机
+
+	//使用 Java 注释结合 javadoc 生成对应的 API 文档
+	package 包：为便于管理类、解决类之间的重名问题
+	文档注释：/**
+	常用的 Java 注释标签：@author  @version  @param  @return  @throws  @deprecated
+	
+二：	
+	基本数据类型：整数型、布尔型、字符型      //BigDecimal & BigInteger
+
+	引用数据类型：数组、对象、接口
+	
+三：JDK 7.0 新特性
+	二进制整数：int a = 0b00000000_00000000_00000000_00000011;  
+	int b = 1_111_111;  // 下划线分隔符 '_' 适用于各种整型数据
+	
+	switch 增强：可以匹配 String
+	
+四：面向对象
+	× 以类的方式组织代码、以对象的方式封装数据
+	对象和类的关系：特殊到一般、具体到抽象
+	
+	内存分析：
+		栈(系统自动分配出来的连续空间)：存放局部变量，不可被多个线程共享，空间连续
+		堆(不连续)：存放创建(new)出的对象，可被多个线程共享
+			方法区(堆)：类的信息、static 变量或方法、常量池等
+	Garbage Collection(垃圾回收机制)：
+	
+	this 关键字：可以通过 this([params]) 方法在构造函数中调用其他的构造函数
+	super：当前对象直接父类的引用。
+	
+	高内聚、低耦合：类的数据操作细节对外封闭，仅暴露少量方法供外界使用
+	
+	多态：程序的最终结果只有在运行时才能被决定，而非在编译时被决定
+		必要条件：继承、方法重写、父类引用指向子类对象
+		编译时类型：由声明时的类型决定    运行时类型：由实际对应的对象类型决定
+		/×  编译时多态性(静态多态性)：表现为方法重载和变量的隐藏
+			运行时多态性(动态多态性)：表现为方法的重写  ×/
+	
+	抽象类是一种模板模式，抽象类为子类提供通用的模板，子类可以在模板的基础上进行扩展
+		意义：将方法的设计和实现相分离
+
+    回调(Callback、Hook)：模板方法模式
+    		回调函数：通过函数参数传递到其它的某一块可执行代码的引用。这一设计允许底层代码调用在高层定义的子程序
+    		// 注册回调函数 + 回调函数必须要符合相应的接口规范
+
+	接口：一组规范，比抽象类更抽象
+		支持多继承：interface A extends B, C {...}  // B、C 均为接口
+
+	内部类：非静态内部类对象单独属于外部类的某个对象	
+		   非静态内部类不能有静态方法、静态属性和静态初始化块
+		
+五：数组：数组也是对象，数组元素相当于对象的成员变量	
+	数组初始化：默认初始化、动态初始化、静态初始化(int []arr = {1,2,3})	
+	
+	数组应用：String 不可变字符序列(private final char []value)
+				× String 对象内的成员属性value，value 指向的字符数组地址是不可变的，而字符数组的元素是可修改的
+				
+			StringBuilder：线程不安全、效率高     StringBuffer：线程安全、效率低
+				都是可变的字符序列(char []value)
+				append 方法返回 this 使得方法变成可执行链(sb.append(123).append("haha");)
+			
+			System：arraycopy(Object src, int srcPos, Object dest, int destPos, int length)
+			Arrays：asList()    sort()    binarySearch() //二分法查询
+
+六：常用类
+	包装类：基本数据类型的包装对象类
+	自动装箱与自动拆箱：编译器自动改进代码
+		自动装箱：Integer a = 100;  等价于：Integer a = new Integer(100);    
+		自动拆箱：int b = new Integer(100);  等价于：int a = new Integer(100).intValue();
+		缓存处理：Integer a = 100; Integer b = 100;  
+					//a == b --> true  JDK 将[-128 —— 127]区间内的基本类型数据用缓存机制作处理
+	
+	日期类：
+		DateFormat：完成时间类和字符串类的转化   // parse()  format()
+		Calendar：日历类   // setTime(Date)  
+	
+	File类：文件名或目录名的抽象表示形式
+	
+	异常机制：实现将逻辑代码和错误处理代码相分离
+		抛出异常：异常发生时，执行中的方法停止运行并生成代表该异常的对象，再将异常对象提交给JRE
+		捕获异常：JRE 获取异常后在方法的调用栈中查找，从生成异常的方法开始回溯，直到找到相应异常的处理代码位置
+	
+		CheckedException(需要捕获进行处理)    UncheckedException
+		处理常见异常的方式：（obj != null）    （obj instanceof List）
+		
+		避免使用异常处理代替错误处理、不要进行细粒度的异常处理、异常往往由高层处理
+		
+七：GUI编程
+	工具类一般使用私有构造方法，提供静态方法
+	定义常量类：Constant	
+		
