@@ -1,27 +1,25 @@
 package pro.generic;
 
-import org.junit.Test;
 
 /**
  * 泛型继承和实现
  * Created by Near on 2015/11/29.
  */
 public class GenericExtends {
-    @Test
-    public void test() {
-    }
 
-    abstract class Father<T1, T2>{
+    abstract class Father<T1, T2> {
         T1 age;
+
         public abstract void fun(T2 t2);
     }
 
     /**
      * 全部保留泛型，泛型子类
+     *
      * @param <T1>
      * @param <T2>
      */
-    class Son1<T1, T2> extends Father<T1, T2>{
+    class Son1<T1, T2> extends Father<T1, T2> {
         @Override
         public void fun(T2 t2) {
 
@@ -30,6 +28,7 @@ public class GenericExtends {
 
     /**
      * 部分保留泛型，泛型子类
+     *
      * @param <T1>
      */
     class Son2<T1> extends Father<T1, String> {
@@ -42,7 +41,7 @@ public class GenericExtends {
     /**
      * 不保留泛型，指定具体类型
      */
-    class Son3 extends Father<Integer, String>{
+    class Son3 extends Father<Integer, String> {
         @Override
         public void fun(String s) {
 
@@ -53,7 +52,7 @@ public class GenericExtends {
      * 泛型的擦除
      * 不保留泛型，不指定类型
      */
-    class Son4 extends Father{
+    class Son4 extends Father {
         @Override
         public void fun(Object object) {
 

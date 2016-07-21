@@ -12,6 +12,7 @@ import java.net.SocketException;
  * 创建服务端（指定端口）
  * 准备客户端的连接(阻塞式)
  * 发送数据 + 接收数据
+ * <p>
  * Created by Near on 2015/12/5.
  */
 public class Server {
@@ -39,8 +40,6 @@ public class Server {
             bufferedWriter.flush();
 
             bufferedWriter.close();
-        } catch (SocketException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -65,12 +64,9 @@ public class Server {
                 System.out.println("Receive: " + msg);
 
                 dataOutputStream = new DataOutputStream(new BufferedOutputStream(socket.getOutputStream()));
-                dataOutputStream.writeUTF("服务器接收到了消息");
+                dataOutputStream.writeUTF("服务器接收到了消息: " + msg);
                 dataOutputStream.flush();
             }
-
-        } catch (SocketException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

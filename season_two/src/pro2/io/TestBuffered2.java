@@ -30,8 +30,6 @@ public class TestBuffered2 {
             }
             bufferedWriter.flush();
             System.out.println("拷贝成功!");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

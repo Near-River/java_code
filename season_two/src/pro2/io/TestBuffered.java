@@ -23,10 +23,6 @@ public class TestBuffered {
             while ((len = inputStream.read(bytes)) != -1) {
                 // System.out.println(new String(bytes));
             }
-
-        } catch (FileNotFoundException e) {
-            // 捕获检查时异常
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -50,8 +46,6 @@ public class TestBuffered {
             // 对缓冲字节进行刷新
             outputStream.flush();
             System.out.println("OK!!!");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

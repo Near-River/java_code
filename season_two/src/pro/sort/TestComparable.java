@@ -10,9 +10,9 @@ import java.util.List;
  * 实现 Comparable 接口
  * Created by Near on 2015/11/30.
  */
-public class TestComparable implements Comparable{
+public class TestComparable implements Comparable {
     @Test
-    public void test(){
+    public void test() {
         /*Integer a = new Integer(101);
         Integer b = new Integer(21);
         System.out.println(a.compareTo(b));*/
@@ -34,7 +34,7 @@ public class TestComparable implements Comparable{
 
         list = listSort(list);
         Iterator<String> iterator = list.iterator();
-        while(iterator.hasNext()){
+        while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
     }
@@ -44,49 +44,51 @@ public class TestComparable implements Comparable{
         return 0;
     }
 
-    public static void bubbleSortPlus(Object []arr){
+    private static void bubbleSortPlus(Object[] arr) {
         boolean ordered = true;
-        out:for(int i=0; i<arr.length-1; i++){
-            for(int j=0; j<arr.length-i-1; j++){
-                if( ((Comparable)arr[j]).compareTo(arr[j+1]) > 0 ) {
+        out:
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                if (((Comparable) arr[j]).compareTo(arr[j + 1]) > 0) {
                     Object temp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = temp;
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
                     ordered = false;
                 }
             }
-            if(ordered){
+            if (ordered) {
                 break out;
             }
         }
         // System.out.println(Arrays.toString(arr));
     }
 
-    public static <E extends Comparable<? super E>> void bubbleSortPlus2(E []arr){
+    private static <E extends Comparable<? super E>> void bubbleSortPlus2(E[] arr) {
         boolean ordered = true;
-        out:for(int i=0; i<arr.length-1; i++){
-            for(int j=0; j<arr.length-i-1; j++){
-                if( ((Comparable)arr[j]).compareTo(arr[j+1]) > 0 ) {
+        out:
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j].compareTo(arr[j + 1]) > 0) {
                     E temp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = temp;
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
                     ordered = false;
                 }
             }
-            if(ordered){
+            if (ordered) {
                 break out;
             }
         }
         // System.out.println(Arrays.toString(arr));
     }
 
-    public static <E extends Comparable<? super E>> List<E> listSort(List<E> list){
+    private static <E extends Comparable<? super E>> List<E> listSort(List<E> list) {
         Object[] objects = list.toArray();
         bubbleSortPlus(objects);
 
         list.clear();
-        for(Object o : objects){
-            list.add((E)o);
+        for (Object o : objects) {
+            list.add((E) o);
         }
        /* for(int i=0; i<objects.length; i++){
             list.add(i, (E)objects[i]);

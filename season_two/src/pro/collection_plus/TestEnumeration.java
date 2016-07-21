@@ -7,15 +7,16 @@ import java.util.StringTokenizer;
 import java.util.Vector;
 
 /**
- * Enumeration：已经被 Iterator 所取代
+ * Enumeration：已被 Iterator 所取代
  * 应用：
- *      Vector:  elements()
- *      StringTokenizer 是 Enumeration 的子类, 作用类似于 String.split('char')
+ * Vector:  elements()
+ * StringTokenizer 是 Enumeration 的子类, 作用类似于 String.split('char')
+ * <p>
  * Created by Near on 2015/11/30.
  */
 public class TestEnumeration {
     @Test
-    public void test(){
+    public void test() {
         Vector<String> vector = new Vector<String>();
         vector.add("Java");
         vector.add("C++");
@@ -29,7 +30,7 @@ public class TestEnumeration {
         String str = "abc/def/ghi";
         StringTokenizer stringTokenizer = new StringTokenizer(str, "/");
 
-         while (stringTokenizer.hasMoreElements()) {
+        while (stringTokenizer.hasMoreElements()) {
             System.out.println(stringTokenizer.nextElement());
         }
     }

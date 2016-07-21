@@ -29,14 +29,9 @@ public class WebApp {
         String servletName = servletContext.getServlet().get(servletContext.getMapping().get(uri));
         try {
             return (Servlet) Class.forName(servletName).newInstance();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return null;
     }
-
 }

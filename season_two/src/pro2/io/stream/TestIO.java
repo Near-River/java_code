@@ -22,12 +22,7 @@ public class TestIO {
             int len = 0;
             while ((len = inputStream.read(bytes)) != -1) {
                 String s = new String(bytes);
-                // System.out.println(s);
             }
-
-        } catch (FileNotFoundException e) {
-            // 捕获检查时异常
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -45,13 +40,15 @@ public class TestIO {
     @Test
     public void testWrite() {
         File file = new File("E:/Books/novels/aaa.txt");
-       /* if (!file.exists()) {
+        /*
+        if (!file.exists()) {
             try {
                 file.createNewFile();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }*/
+        }
+        */
         OutputStream outputStream = null;
         try {
             // outputStream = new FileOutputStream(file);
@@ -63,8 +60,6 @@ public class TestIO {
             // 对缓冲字节进行刷新
             outputStream.flush();
             System.out.println("OK!!!");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

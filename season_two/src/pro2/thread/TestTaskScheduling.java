@@ -8,6 +8,7 @@ import java.util.TimerTask;
  * 任务调度
  * Timer 定时器类    TimerTask  任务类
  * 设置定时器任务
+ * <p>
  * Created by Near on 2015/12/4.
  */
 public class TestTaskScheduling {
@@ -31,4 +32,5 @@ public class TestTaskScheduling {
         }
         timer.cancel();
     }
+
 }

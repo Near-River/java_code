@@ -1,11 +1,9 @@
 package pro2.thread;
 
-
 /**
  * Created by near on 2015/12/26.
  */
 public class TestFature {
-
     public static void main(String[] args) {
         Client client = new Client();
         // 返回一个FutureData
@@ -13,12 +11,11 @@ public class TestFature {
         System.out.println("请求完毕！");
         try {
             // 处理其他业务
-            // 在次过程中，真是数据RealData组装完成，重复利用等待时间
+            // 在此过程中，真实数据RealData组装完成，重复利用等待时间
             Thread.sleep(2000);
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
         System.out.println("数据 = " + data.getResult()); // 真实数据
-
     }
 }
 
@@ -59,7 +56,7 @@ class FutureData implements Data {
         while (!isReady) {
             try {
                 wait();
-            } catch (Exception e) {
+            } catch (Exception ignored) {
             }
         }
         return realData.getResult();
@@ -70,11 +67,11 @@ class RealData implements Data {
     protected String result;
 
     public RealData(String para) { // 构造比较慢
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < 5; i++) {
             sb.append(para);
             try {
-                Thread.sleep(800);
+                Thread.sleep(500);
             } catch (Exception e) {
                 e.printStackTrace();
             }

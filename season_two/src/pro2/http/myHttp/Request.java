@@ -46,7 +46,7 @@ public class Request {
             //接收客户端的请求信息
             requestInfo = new String(data, 0, len).trim();
 
-            if (null == requestInfo || requestInfo.length() < 1) {
+            if (requestInfo == null || requestInfo.length() < 1) {
                 return;
             }
         } catch (IOException e) {

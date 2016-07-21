@@ -10,7 +10,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * 手写 HTTPServer
  * 浏览器输入：http://localhost:8080
  * Created by Near on 2015/12/6.
  */

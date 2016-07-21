@@ -17,6 +17,7 @@ import java.net.SocketException;
  * 数据包（接收数据）
  * 分析数据
  * 释放资源
+ * <p>
  * Created by Near on 2015/12/5.
  */
 public class Server {
@@ -39,9 +40,6 @@ public class Server {
             // 分析数据
             byte[] data = packet.getData();
             System.out.println(new String(data, 0, data.length));
-
-        } catch (SocketException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -71,8 +69,6 @@ public class Server {
             String s = dataInputStream.readUTF();
 
             System.out.println(d + "\t" + s);
-        } catch (SocketException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

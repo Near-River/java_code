@@ -4,6 +4,7 @@ package pro2.thread;
  * 模拟购票系统
  * 存在问题：线程并发访问资源，读取脏数据
  * 引入线程同步(线程安全) synchronized
+ * <p>
  * Created by Near on 2015/12/4.
  */
 public class TestSynchronized implements Runnable {
@@ -41,15 +42,15 @@ public class TestSynchronized implements Runnable {
 
     @Override
     public void run() {
-       runDetail();
+        runDetail();
     }
 
     // 同步方法
-    private static synchronized void runDetail(){
+    private static synchronized void runDetail() {
         // 作临界区
         while (i > 0) {
             try {
-                Thread.sleep(1000);
+                Thread.sleep(300);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

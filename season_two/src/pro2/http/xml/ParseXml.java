@@ -19,7 +19,7 @@ public class ParseXml {
         SAXParserFactory factory = SAXParserFactory.newInstance();
         // 从解析工厂中获取解析器
         SAXParser parser = factory.newSAXParser();
-        // 加载文档 Document 注册处理器并编写处理器
+        // 加载文档 Document 注册并编写处理器
         PersonHandler handler = new PersonHandler();
 
         try {

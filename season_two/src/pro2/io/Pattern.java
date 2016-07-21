@@ -8,7 +8,7 @@ import org.junit.Test;
  */
 public class Pattern {
     @Test
-    public void test(){
+    public void test() {
         Voice voice = new Voice();
         voice.say();
         Amplifier amplifier = new Amplifier(voice);
@@ -19,25 +19,27 @@ public class Pattern {
 /**
  * 对 Voice 类进行装饰
  */
-class Amplifier{
+class Amplifier {
     private Voice voice;
 
-    public Amplifier() {}
+    public Amplifier() {
+    }
 
     public Amplifier(Voice voice) {
         this.voice = voice;
     }
 
-    public void say(){
-        this.voice.setSound(this.voice.getSound()*10);
+    public void say() {
+        this.voice.setSound(this.voice.getSound() * 10);
         System.out.println("Sound: " + this.voice.getSound());
     }
 }
 
-class Voice{
+class Voice {
     private int sound = 10;
 
-    public Voice() {}
+    public Voice() {
+    }
 
     public Voice(int sound) {
         this.sound = sound;
@@ -52,7 +54,7 @@ class Voice{
         this.sound = sound;
     }
 
-    public void say(){
-        System.out.println("Sound: "+sound);
+    public void say() {
+        System.out.println("Sound: " + sound);
     }
 }

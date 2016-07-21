@@ -10,6 +10,7 @@ import java.util.TreeSet;
  * TreeSet 在数据添加过程中实现排序
  * -- 在使用过程中不要修改数据,不然会造成数据的不一致
  * TreeMap 的使用方法和 TreeSet 类似
+ * <p>
  * Created by Near on 2015/11/30.
  */
 public class TestTreeSet {

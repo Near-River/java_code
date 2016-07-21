@@ -14,8 +14,8 @@ public class RegisterServlet extends Servlet {
     @Override
     public void doPost(Request request, Response response) throws IOException {
         response.println("<html><head><title>注册</title></head>");
-        response.print("<body><h1>用户名：</h1>");
-        response.print(request.getParameter("name"));
+        response.print("<body><h1>用户名：");
+        response.print(request.getParameter("name") + "</h1>");
         response.println("</body></html>");
 
         System.out.println(request.getParameter("name"));

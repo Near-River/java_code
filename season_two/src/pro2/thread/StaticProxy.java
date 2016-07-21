@@ -10,7 +10,7 @@ public class StaticProxy {
     @Test
     public void test() {
         Marry me = new SomeBody("王二狗");
-        WeddingCompany<SomeBody> weddingCompany = new WeddingCompany(me);
+        WeddingCompany<SomeBody> weddingCompany = new WeddingCompany<SomeBody>((SomeBody) me);
         weddingCompany.marry();
     }
 }

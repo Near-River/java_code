@@ -8,6 +8,7 @@ import java.util.*;
 /**
  * 对新闻进行排序：
  * 发布日期 --> 点击量 --> 新闻标题
+ * <p>
  * Created by Near on 2015/11/30.
  */
 public class NewsDemo {
@@ -27,7 +28,8 @@ public class NewsDemo {
             System.out.println(iterator.next());
         }
 
-        /*TreeSet<News> treeSet= new TreeSet<News>();
+        /*
+        TreeSet<News> treeSet= new TreeSet<News>();
         treeSet.add(new News("Java", 101, new Date(1000)));
         treeSet.add(new News("C++", 10, new Date()));
         treeSet.add(new News("JavaScript", 201, new Date(1000)));
@@ -37,7 +39,8 @@ public class NewsDemo {
         iterator = treeSet.iterator();
         while(iterator.hasNext()){
             System.out.println(iterator.next());
-        }*/
+        }
+        */
     }
 }
 

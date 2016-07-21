@@ -14,6 +14,7 @@ import java.util.Set;
  * 创建服务端（指定端口）
  * 准备客户端的连接(阻塞式)
  * 发送数据 + 接收数据
+ * <p>
  * Created by Near on 2015/12/5.
  */
 public class Server {
@@ -30,7 +31,7 @@ public class Server {
         try {
             // 创建服务端（指定端口）
             server = new ServerSocket(8080);
-            while(true) {
+            while (true) {
                 // 准备客户端的连接(阻塞式)
                 socket = server.accept();
                 Session session = new Session(socket);
@@ -47,9 +48,10 @@ public class Server {
         private DataOutputStream dataOutputStream = null;
         private boolean isRunning = true;
 
-        public Session() {}
+        public Session() {
+        }
 
-        public Session(Socket socket) {
+        Session(Socket socket) {
             try {
                 dataInputStream = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
                 dataOutputStream = new DataOutputStream(new BufferedOutputStream(socket.getOutputStream()));
@@ -70,12 +72,11 @@ public class Server {
                 // e.printStackTrace();
                 isRunning = false;
                 FileUtils.close(dataOutputStream, dataInputStream);
-            } finally {
-                return msg;
             }
+            return msg;
         }
 
-        public void sendMsg(String msg) {
+        void sendMsg(String msg) {
             if (msg != null && !("".equals(msg))) {
                 try {
                     dataOutputStream.writeUTF(msg);
@@ -90,7 +91,7 @@ public class Server {
         }
 
         // 发送消息给其他的客户端
-        public void sendMsg2() {
+        void sendMsg2() {
             String msg = receive();
             if (msg != null && !("".equals(msg))) {
                 for (Session session : sessions) {

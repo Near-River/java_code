@@ -4,6 +4,7 @@ package pro2.thread;
  * 生产者-消费者模式
  * wait()：等待，释放锁
  * notify() / notifyAll()：唤醒
+ * <p>
  * Created by Near on 2015/12/4.
  */
 public class TestDeadLock {

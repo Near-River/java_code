@@ -45,12 +45,8 @@ public class Request {
             len = inputStream.read(data);
             //接收客户端的请求信息
             requestInfo = new String(data, 0, len).trim();
-            if (null == requestInfo || requestInfo.length() < 1) {
-                return;
-            }
         } catch (IOException e) {
             e.printStackTrace();
-            return;
         }
     }
 
@@ -89,8 +85,6 @@ public class Request {
             if (params != null) {
                 parseParams(params);
             }
-        } else {
-            return;
         }
     }
 

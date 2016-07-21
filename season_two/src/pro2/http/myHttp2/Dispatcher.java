@@ -21,12 +21,12 @@ public class Dispatcher implements Runnable {
         } catch (IOException e) {
             e.printStackTrace();
             code = 500;
-            return;
         }
     }
 
     @Override
     public void run() {
+        System.out.println(request.getUri());
         Servlet servlet = WebApp.getServlet(request.getUri());
 
         try {
@@ -41,7 +41,7 @@ public class Dispatcher implements Runnable {
         }
         try {
             response.pushToClient(500);
-        } catch (IOException e1) {
+        } catch (IOException ignored) {
         }
 
         try {

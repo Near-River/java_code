@@ -5,13 +5,13 @@ package pro.collection.map;
  */
 public class MyMap {
 
-    Entry []entries = new Entry[100];
+    Entry[] entries = new Entry[100];
     int size;
 
-    public void put(Object key, Object value){
+    public void put(Object key, Object value) {
         // 键值不能重复
-        for(int i=0; i<size; i++){
-            if(key.equals(entries[i].key)){
+        for (int i = 0; i < size; i++) {
+            if (key.equals(entries[i].key)) {
                 entries[i].value = value;
                 return;
             }
@@ -20,38 +20,38 @@ public class MyMap {
         entries[size++] = entry;
     }
 
-    public Object get(Object key){
-        for(int i=0; i<size; i++){
-            if(key.equals(entries[i].key)){
+    public Object get(Object key) {
+        for (int i = 0; i < size; i++) {
+            if (key.equals(entries[i].key)) {
                 return entries[i].value;
             }
         }
         return null;
     }
 
-    public boolean containsKey(Object key){
-        for(int i=0; i<size; i++){
-            if(key.equals(entries[i].key)){
+    public boolean containsKey(Object key) {
+        for (int i = 0; i < size; i++) {
+            if (key.equals(entries[i].key)) {
                 return true;
             }
         }
         return false;
     }
 
-    public boolean containsValue(Object value){
-        for(int i=0; i<size; i++){
-            if(value.equals(entries[i].value)){
+    public boolean containsValue(Object value) {
+        for (int i = 0; i < size; i++) {
+            if (value.equals(entries[i].value)) {
                 return true;
             }
         }
         return false;
     }
 
-    class Entry{
+    private class Entry {
         Object key;
         Object value;
 
-        public Entry(Object key, Object value) {
+        Entry(Object key, Object value) {
             this.key = key;
             this.value = value;
         }

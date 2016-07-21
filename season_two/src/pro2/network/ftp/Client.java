@@ -12,6 +12,7 @@ import java.net.SocketException;
  * 创建客户端（必须指定服务器端的端口）
  * 准备数据（字节数组）
  * 接收数据 + 发送数据
+ * <p>
  * Created by Near on 2015/12/5.
  */
 public class Client {
@@ -35,8 +36,6 @@ public class Client {
             System.out.println(msg);
 
             bufferedReader.close();
-        } catch (SocketException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -66,9 +65,6 @@ public class Client {
                 msg = dataInputStream.readUTF();
                 System.out.println("Receive: " + msg);
             }
-
-        } catch (SocketException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

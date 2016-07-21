@@ -19,6 +19,7 @@ import java.util.Scanner;
  * 数据打包（DatagramSocket+服务器地址和端口）
  * 发送数据
  * 释放资源
+ * <p>
  * Created by Near on 2015/12/5.
  */
 public class Client {
@@ -40,8 +41,6 @@ public class Client {
             packet = new DatagramPacket(bytes, 0, bytes.length, address);
             // 发送数据
             client.send(packet);
-        } catch (SocketException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -79,8 +78,6 @@ public class Client {
             packet = new DatagramPacket(bytes, 0, bytes.length, address);
             // 发送数据
             client.send(packet);
-        } catch (SocketException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

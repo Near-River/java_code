@@ -3,7 +3,7 @@ package pro.commons;
 /**
  * 等级类：根据雇员的工资来划分等级
  */
-class Level{
+class Level {
     private String name;
     private String level;
 

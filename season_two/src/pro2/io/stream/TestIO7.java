@@ -14,7 +14,7 @@ import java.io.RandomAccessFile;
 public class TestIO7 {
     /**
      * RandomAccessFile: 做文件分割(明确分割快的分配大小和实际大小)
-     *      seek()
+     * seek()
      */
     @Test
     public void test() {
@@ -28,9 +28,6 @@ public class TestIO7 {
             while ((len = randomAccessFile.read(bytes)) != -1) {
                 System.out.println(new String(bytes));
             }
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -53,7 +50,7 @@ public class TestIO7 {
         String srcPath = "E:/pictures/01238_HD.jpg";
         String destDirPath = "E:/pictures/temp";
         String destFilePath = "E:/pictures/1.jpg";
-        SplitFile splitFile = new SplitFile(srcPath, 10240*5);
+        SplitFile splitFile = new SplitFile(srcPath, 10240 * 5);
         System.out.println(splitFile.getSize());
 
         // splitFile.split(destDirPath);

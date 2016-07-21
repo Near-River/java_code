@@ -13,23 +13,23 @@ public class MySet {
         hashMap = new HashMap();
     }
 
-    public int size(){
+    public int size() {
         return hashMap.size();
     }
 
-    public void add(Object object){
+    public void add(Object object) {
         hashMap.put(object, PRESENT);
     }
 
-    public boolean remove(Object object){
-       return hashMap.remove(object) == PRESENT;
+    public boolean remove(Object object) {
+        return hashMap.remove(object) == PRESENT;
     }
 
     public boolean contains(Object object) {
         return hashMap.containsKey(object);
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return hashMap.isEmpty();
     }
 }

@@ -27,6 +27,7 @@ import java.util.*;
  * Transformer: 转换器
  * Closure: 闭包，封装特定的应用功能
  * 集合操作
+ * <p>
  * Created by Near on 2015/12/1.
  */
 public class TestCollections {
@@ -53,14 +54,14 @@ public class TestCollections {
         // 容器值非空添加的判断
         List<Integer> list = PredicatedList.predicatedList(new ArrayList<Integer>(), notNullPredicate);
         list.add(123);
-        // list.add(null);
+        // list.add(null);  // encountering an error
 
         //===============================================================
         // 唯一性判断
         Predicate<Integer> uniquePredicate = UniquePredicate.uniquePredicate();
         List<Integer> list2 = PredicatedList.predicatedList(new ArrayList<Integer>(), uniquePredicate);
         list2.add(123);
-        // list2.add(123);
+        // list2.add(123);  // encountering an error
 
         //===============================================================
         // 自定义判断
@@ -87,8 +88,8 @@ public class TestCollections {
             }
         };
         List<Long> list = new ArrayList<Long>();
-        list.add(9999999999999L);
-        list.add(11111111111111L);
+        list.add(999999999999L);
+        list.add(1111111111111L);
         Collection<String> collection = CollectionUtils.collect(list, selfTransform);
         for (String s : collection) {
             System.out.println(s);
@@ -133,8 +134,8 @@ public class TestCollections {
         Transformer switchTransformer = new SwitchTransformer(predicates, transformers, null);
         List<Employee> list = new ArrayList<Employee>();
         list.add(new Employee("小明", 1000.0));
-        list.add(new Employee("小霞", 6000.0));
         list.add(new Employee("小红", 100000.0));
+        list.add(new Employee("小霞", 6000.0));
         list.add(new Employee("小军", 20000.0));
 
         Collection<Level> collection = CollectionUtils.collect(list, switchTransformer);
@@ -250,7 +251,7 @@ public class TestCollections {
         List<Goods> list = new ArrayList<Goods>();
         list.add(new Goods("aaa", 100.0, true));
         list.add(new Goods("bbb", 600.0, false));
-        list.add(new Goods("ccc", 100.0, true));
+        list.add(new Goods("ccc", 120.0, true));
         list.add(new Goods("ddd", 200.0, false));
 
         // 打折商品打八折
@@ -287,7 +288,7 @@ public class TestCollections {
         // 求并集
         Collection<Integer> collection = CollectionUtils.union(set, set2);
         for (Integer i : collection) {
-            // System.out.println(i);
+            System.out.println(i);
         }
         // 求交集：两种方法
         // Collection<Integer> collection2 = CollectionUtils.intersection(set, set2);
@@ -307,7 +308,7 @@ public class TestCollections {
         queue.add("ddd");
         Iterator<String> iterator = queue.iterator();
         while (iterator.hasNext()) {
-            System.out.print(iterator.next() + "\t");
+            System.out.print(iterator.next() + "\t\t");
         }
         // 只读队列
         Queue<String> readOnlyQueue = UnmodifiableQueue.unmodifiableQueue(queue);
@@ -322,7 +323,7 @@ public class TestCollections {
     }
 
     /**
-     * IteratorMap: 遍历 Map
+     * IteratorMap: 遍历 Map (无序)
      */
     @Test
     public void testIteratorMap() {
@@ -387,10 +388,10 @@ public class TestCollections {
      */
     @Test
     public void testArrayIterator() {
-        int[] arr = {1, 2, 3, 4, 5, 6, 7};
+        String[] arr = new String[]{"mom", "abc", "aba", "near"};
 
-        Iterator<Integer> iterator = new ArrayListIterator<Integer>(arr);
-        // Iterator<String> iterator = new ArrayListIterator<String>(arr, 1, 5);
+        // Iterator<Integer> iterator = new ArrayListIterator<Integer>(arr);
+        Iterator<String> iterator = new ArrayListIterator<String>(arr, 1, 3);
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
@@ -410,9 +411,9 @@ public class TestCollections {
         // System.out.println(map.inverseBidiMap().get("201"));
 
         MapIterator<String, String> mapIterator = map.inverseBidiMap().mapIterator();
-        while(mapIterator.hasNext()){
+        while (mapIterator.hasNext()) {
             mapIterator.next();
-            System.out.println(mapIterator.getKey()+"-->"+mapIterator.getValue());
+            System.out.println(mapIterator.getKey() + "-->" + mapIterator.getValue());
         }
     }
 
@@ -424,21 +425,20 @@ public class TestCollections {
     public void testBag() {
         String[] arr = "this is a cat and that is a mice and where is the food".split(" ");
         Bag<String> bag = new HashBag<String>();
-       /* bag.add("b");
+        /*
+        bag.add("b");
         bag.add("a", 3);
         bag.remove("a", 2);
         Iterator<String> iterator = bag.iterator();
         while(iterator.hasNext()){
             System.out.println(iterator.next());
-        }*/
-        for(String s : arr){
-            bag.add(s);
         }
+        */
+        Collections.addAll(bag, arr);
+
         Set<String> set = bag.uniqueSet();
-        Iterator<String> iterator = set.iterator();
-        while(iterator.hasNext()){
-            String key = iterator.next();
-            System.out.println(key+"-->"+bag.getCount(key));
+        for (String key : set) {
+            System.out.println(key + "-->" + bag.getCount(key));
         }
     }
 }

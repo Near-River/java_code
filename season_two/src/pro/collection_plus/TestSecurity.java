@@ -16,7 +16,7 @@ public class TestSecurity {
         list.add("bbb");
         list.add("ccc");
 
-        // 将 ArrayList 对象包装成线程安全的对象 ArrayList 对象
+        // 将 ArrayList 对象包装成线程安全的 ArrayList 对象
         List<String> synList = Collections.synchronizedList(list);
 
         Map<String, String> map = new HashMap<String, String>();
@@ -38,7 +38,7 @@ public class TestSecurity {
         System.out.println(oper(set));
     }
 
-    public static Set<String> oper(Set<String> set) {
+    private static Set<String> oper(Set<String> set) {
         // 避免空指针异常的发生
         if (set == null) {
             return Collections.EMPTY_SET;

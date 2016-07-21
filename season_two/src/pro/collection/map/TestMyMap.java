@@ -15,13 +15,11 @@ public class TestMyMap {
         try {
             myMapPlus = (MyMapPlus) c.newInstance();
 
-            myMapPlus.put("near", new String("game"));
             myMapPlus.put("near", new String("computer"));
+            myMapPlus.put("near", new String("game"));
 
             System.out.println(myMapPlus.get("near"));
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
+        } catch (InstantiationException | IllegalAccessException e) {
             e.printStackTrace();
         }
     }

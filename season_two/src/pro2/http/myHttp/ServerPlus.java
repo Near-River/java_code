@@ -2,6 +2,7 @@ package pro2.http.myHttp;
 
 import java.io.IOException;
 import java.net.ServerSocket;
+import java.net.Socket;
 
 /**
  * 对客户端的请求进行响应
@@ -33,7 +34,7 @@ public class ServerPlus {
      * 接收客户端
      */
     private void receive() {
-       /* try {
+        try {
             Socket client = server.accept();
 
             Request request = new Request(client.getInputStream());
@@ -41,17 +42,18 @@ public class ServerPlus {
             Servlet servlet = new Servlet();
             servlet.service(request, response);
 
+            response.pushToClient(200);
         } catch (IOException e) {
             stop();
-        }*/
+        }
 
-        try {
+      /*  try {
             while (!isShutDown) {
                 new Thread(new Dispatcher(server.accept())).start();
             }
         } catch (IOException e) {
             stop();
-        }
+        }*/
     }
 
     public void stop() {

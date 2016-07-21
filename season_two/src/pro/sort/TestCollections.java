@@ -11,6 +11,7 @@ import java.util.List;
  * 使用 Collections 工具类：
  * -- sort(List)  sort(List, Comparator)
  * -- reverse(List)  shuffle(List)
+ * <p>
  * Created by Near on 2015/11/30.
  */
 public class TestCollections {
@@ -46,7 +47,7 @@ public class TestCollections {
     /**
      * 模拟斗地主游戏
      */
-    public void playGame() {
+    private void playGame() {
         List<Integer> cards = new ArrayList<Integer>();
         for (int i = 0; i < 54; i++) {
             cards.add(i + 1);

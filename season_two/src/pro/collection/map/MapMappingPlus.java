@@ -10,6 +10,7 @@ import java.util.Map;
 /**
  * 分拣存储:
  * --计算班级的考试总分和平均分
+ * <p>
  * Created by Near on 2015/11/29.
  */
 public class MapMappingPlus {
@@ -83,7 +84,7 @@ public class MapMappingPlus {
         }
     }
 
-    class ClassRoom {
+    private class ClassRoom {
         private String classId;
         private List<Student> students;
         private double total;

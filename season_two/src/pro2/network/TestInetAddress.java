@@ -18,7 +18,7 @@ public class TestInetAddress {
             System.out.println(inetAddress.getHostAddress());
             System.out.println(inetAddress.getHostName());
 
-            inetAddress = InetAddress.getByName("www.baidu.com");
+            inetAddress = InetAddress.getByName("kltitrade.com");
 
             System.out.println(inetAddress.getHostAddress());
             System.out.println(inetAddress.getHostName());

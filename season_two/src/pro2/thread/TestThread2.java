@@ -49,10 +49,7 @@ public class TestThread2 extends Thread {
             myThread2.setFlag(false);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }/* finally {
-            thread.stop();
-            thread2.stop();
-        }*/
+        }
     }
 
     @Override
@@ -62,9 +59,5 @@ public class TestThread2 extends Thread {
         }
     }
 
-    /*@Test
-    public void test3(){
-        System.out.println(Runtime.getRuntime().availableProcessors());
-    }*/
 }
 

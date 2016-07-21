@@ -10,6 +10,7 @@ import java.util.List;
 /**
  * 实现 Comparator 接口
  * -- 解耦：独立于实体类
+ * <p>
  * Created by Near on 2015/11/30.
  */
 public class TestComparator<E> implements Comparator<E> {
@@ -39,7 +40,7 @@ public class TestComparator<E> implements Comparator<E> {
 
         list = listSort(list, testComparator);
         Iterator<String> iterator = list.iterator();
-        while(iterator.hasNext()){
+        while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
     }
@@ -50,11 +51,12 @@ public class TestComparator<E> implements Comparator<E> {
         return ((Comparable) o1).compareTo(o2);
     }
 
-    public static <E> void bubbleSortPlus(E[] arr, Comparator<? super E> comparator) {
+    private static <E> void bubbleSortPlus(E[] arr, Comparator<? super E> comparator) {
         boolean ordered = true;
-        out:for (int i = 0; i < arr.length - 1; i++) {
+        out:
+        for (int i = 0; i < arr.length - 1; i++) {
             for (int j = 0; j < arr.length - i - 1; j++) {
-                if (comparator.compare((E)arr[j], (E)arr[j+1]) > 0) {
+                if (comparator.compare((E) arr[j], (E) arr[j + 1]) > 0) {
                     E temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
@@ -68,13 +70,13 @@ public class TestComparator<E> implements Comparator<E> {
         // System.out.println(Arrays.toString(arr));
     }
 
-    public static <E> List<E> listSort(List<E> list, Comparator<? super E> comparator){
+    private static <E> List<E> listSort(List<E> list, Comparator<? super E> comparator) {
         E[] objects = (E[]) list.toArray();
         bubbleSortPlus(objects, comparator);
 
         list.clear();
-        for(Object o : objects){
-            list.add((E)o);
+        for (Object o : objects) {
+            list.add((E) o);
         }
         return list;
     }

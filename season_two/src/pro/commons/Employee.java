@@ -3,7 +3,7 @@ package pro.commons;
 /**
  * Created by Near on 2015/12/1.
  */
-class Employee{
+class Employee {
     private String name;
     private double salary;
 

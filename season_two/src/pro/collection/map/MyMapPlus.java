@@ -5,9 +5,11 @@ import java.util.LinkedList;
 
 /**
  * MyMap 的升级版，使用 hashcode 可以提高查询效率
+ * <p>
  * Created by Near on 2015/11/28.
  */
 public class MyMapPlus {
+
     final int MAX_SIZE = 99;
     LinkedList[] entriesList = new LinkedList[MAX_SIZE];
     int size;
@@ -41,9 +43,8 @@ public class MyMapPlus {
 
         if (entriesList[site] != null) {
             LinkedList linkedList = entriesList[site];
-            Iterator iterator = linkedList.iterator();
-            while (iterator.hasNext()) {
-                Entry entry = (Entry) iterator.next();
+            for (Object obj : linkedList) {
+                Entry entry = (Entry) obj;
                 if (key.equals(entry.key)) {
                     return entry.value;
                 }
@@ -52,11 +53,11 @@ public class MyMapPlus {
         return null;
     }
 
-    class Entry {
+    private class Entry {
         Object key;
         Object value;
 
-        public Entry(Object key, Object value) {
+        Entry(Object key, Object value) {
             this.key = key;
             this.value = value;
         }

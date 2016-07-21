@@ -27,8 +27,6 @@ public class TestIO3 {
                 String s = new String(flush, "utf-8");
                 System.out.println(s);
             }
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -52,8 +50,6 @@ public class TestIO3 {
      */
     @Test
     public void testReadAndWrite() {
-       /* File src = new File("E:/Books/novels/《小王子》.txt");
-        File dest = new File("E:/Books/novels/bbb.txt");*/
         File src = new File("E:/pictures/default.png");
         File dest = new File("E:/pictures/touxiang.png");
 
@@ -84,8 +80,6 @@ public class TestIO3 {
             }
             outputStream.flush();
             System.out.println("Success!");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

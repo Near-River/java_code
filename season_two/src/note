@@ -7,7 +7,7 @@
 		Set（接口）：无序不可重复 -> HashSet、TreeSet
 	Map（接口）：键值不可重复  底层实现：数组+链表
 		HashMap    TreeMap
-		// 两个内容相同的对象具有相等的 hashcode
+		* 两个内容相同的对象具有相等的 hashcode
 
 	HashTable：线程安全，同步，效率较低下； 键和值均不能为空
 	    Perperties：继承于HashTable，用于读取资源文件
@@ -25,8 +25,8 @@
 	重要类(添加、删除、改写、查看、遍历)：
 		ArrayList    LinkedList    HashSet：重写hashcode + equals
 		HashMap(重写hashcode + equals)：keySet()/values()  entrySet()
-		Properties：做资源配置文件    HashTable(键和值均不可为空)
-		Stack    Collections(工具类)    TreeSet(元素可以排序)
+		Properties：做资源配置文件工具类     HashTable(键和值均不可为空)
+		Stack    Collections(工具类)       TreeSet(元素可以排序)
 
 二：泛型（Generic）：<>
 	泛化类型，类型在使用时指定，泛型是“模板”
@@ -103,7 +103,7 @@
 				DualTreeBidiMap ：有序
                 DualHashBidiMap ：无序
 			包 Bag：
-				HashBag：有序    TreeBag ：无序
+				HashBag：无序    TreeBag ：有序
 				统计元素出现的次数：uniqueSet() + getCount()
 
 六：IO 流
@@ -112,15 +112,15 @@
         流向：输入流和输出流    数据：字节流和字符流
 
     字节流和字符流：
-        字节流：InputStream: read(byte[])  read(byte[], int, int)  close())
+        字节流：InputStream: read(byte[])  read(byte[], int, int)  close()
                 OutputStream: write(byte[])  write(byte[], int, int)  flush()  close()
-        字符流：Reader: read(byte[])  read(byte[], int, int)  close())
+        字符流：Reader: read(byte[])  read(byte[], int, int)  close()
                 Writer: write(byte[])  write(byte[], int, int)  flush()  close()
     操作：读取/写入文件：建立联系(选择源)-->选择流--操作(读取/写入大小)-->释放资源
-        处理流： 字节/字符缓冲流
-       *转换流： 解码：Decoder（二进制-->解码字符集）    编码：Encoder（字符-->编码字符集）
-            InputStreamReader(InputStream in, Charset cs)
-            OutputStreamWriter(OutputStream out, Charset cs)
+         处理流： 字节/字符缓冲流
+         *转换流： 解码：Decoder（二进制-->解码字符集）    编码：Encoder（字符-->编码字符集）
+             InputStreamReader(InputStream in, Charset cs)
+             OutputStreamWriter(OutputStream out, Charset cs)
 
     节点(字节)流：
         字节数组节点流：ByteArrayInputStream / ByteArrayOutputStream + toByteArray()
@@ -169,7 +169,7 @@
     自学：juc、quartz
 
 八：网络编程
-    基本概念：网络  地址  端口号（同一协议下的端口不可重复）  资源定位：URL
+    基本概念：网络  地址  端口号（同一协议下的端口不可重复）  资源定位：URI
         数据传输：*协议（TCP：传输控制协议、UDP：用户数据报协议）+ 数据（封装、拆分）
         类：InetAddress  InetSocketAddress  URL
             TCP: ServerSocket  Socket

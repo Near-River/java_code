@@ -1,12 +1,13 @@
 package pro2.thread;
 
 /**
- * 单例模式练习
+ * 单例模式
  * Created by Near on 2015/12/4.
  */
 public class SingletonPattern {
     public static void main(String args[]) {
-        /*Jvm jvm = Jvm.getInstance();
+        /*
+        Jvm jvm = Jvm.getInstance();
         Jvm jvm2 = Jvm.getInstance();
         System.out.println(jvm);
         System.out.println(jvm2);
@@ -14,7 +15,8 @@ public class SingletonPattern {
         Dog dog = new Dog();
         Dog dog2 = new Dog();
         System.out.println(dog);
-        System.out.println(dog2);*/
+        System.out.println(dog2);
+        */
 
         Jvm jvm = Jvm.getInstance();
         Jvm2 jvm2 = Jvm2.getInstance();

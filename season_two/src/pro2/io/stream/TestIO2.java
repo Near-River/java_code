@@ -23,9 +23,7 @@ public class TestIO2 {
                 String s = new String(chars);
                 System.out.println(s);
             }
-
         } catch (FileNotFoundException e) {
-            // 捕获检查时异常
             System.out.println("目标文件不存在!");
             e.printStackTrace();
         } catch (IOException e) {
@@ -56,8 +54,6 @@ public class TestIO2 {
             // 对缓冲字节进行刷新
             writer.flush();
             System.out.println("OK!!!");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -91,8 +87,6 @@ public class TestIO2 {
             }
             writer.flush();
             System.out.println("拷贝成功!");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -111,7 +105,6 @@ public class TestIO2 {
                 }
             }
         }
-
     }
 }
 

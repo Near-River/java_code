@@ -8,9 +8,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
- * URL：协议 + 主机域名 + 端口 + 资源 URI
+ * URL：协议 + 主机域名 + 端口 + 资源相对路径
  * 构建：URL(String spec) // 绝对路径
- * URL(URL context, String spec) // 相对路径
+ *      URL(URL context, String spec) // 相对路径
+ * <p>
  * Created by Near on 2015/12/5.
  */
 public class TestURL {
@@ -45,22 +46,13 @@ public class TestURL {
         try {
             url = new URL("http://www.baidu.com");
 
-            InputStream inputStream = url.openStream();
-            /*byte[] bytes = new byte[1024];
-            int len = 0;
-            while ((len = inputStream.read(bytes)) != -1) {
-                System.out.println(new String(bytes));
-            }*/
-            bufferedReader = null;
             String line = null;
-            bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "utf-8"));
+            bufferedReader = new BufferedReader(new InputStreamReader(url.openStream(), "utf-8"));
             bufferedWriter = new BufferedWriter(new FileWriter(file));
             while ((line = bufferedReader.readLine()) != null) {
                 // System.out.println(line);
                 bufferedWriter.write(line);
             }
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

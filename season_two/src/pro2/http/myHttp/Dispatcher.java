@@ -20,7 +20,6 @@ public class Dispatcher implements Runnable {
         } catch (IOException e) {
             e.printStackTrace();
             code = 500;
-            return;
         }
     }
 
@@ -36,7 +35,7 @@ public class Dispatcher implements Runnable {
         }
         try {
             response.pushToClient(500);
-        } catch (IOException e1) {
+        } catch (IOException ignored) {
         }
         try {
             if (client != null) {

@@ -14,11 +14,10 @@ public class TestEqualsAndHashcode {
         System.out.println(person1.equals(person2));
         System.out.println(person1.hashCode());
         System.out.println(person2.hashCode());
-
     }
 }
 
-class Person{
+class Person {
     // 可以将具有唯一性质的属性作为 hashcode 的主要参照
     private int id;
     private String name;
@@ -38,24 +37,21 @@ class Person{
         // 定义一个素数
         final int prime = 31;
         int result = 1;
-        return prime*result + id;
+        return prime * result + id;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if(this == obj){
+        if (this == obj) {
             return true;
         }
-        if(obj == null){
+        if (obj == null) {
             return false;
         }
-        if(this.getClass() != obj.getClass()){
+        if (this.getClass() != obj.getClass()) {
             return false;
         }
         Person person = (Person) obj;
-        if(id != person.id){
-            return false;
-        }
-        return true;
+        return id == person.id;
     }
 }

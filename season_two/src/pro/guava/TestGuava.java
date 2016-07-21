@@ -31,7 +31,7 @@ public class TestGuava {
         // 存在不安全性：当向 list 中添加元素时，readList 也同时发生改变
         list.add("eee");
         Iterator<String> iterator = readList.iterator();
-        while(iterator.hasNext()){
+        while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
         System.out.println(list.size() + "  " + readList.size());
@@ -101,7 +101,7 @@ public class TestGuava {
         Function<String, String> function1 = new Function<String, String>() {
             @Override
             public String apply(String s) {
-                return (s.length()>5) ? s.substring(0,5):s;
+                return (s.length() > 5) ? s.substring(0, 5) : s;
             }
         };
         // function2 ：将字符串转为大写字符串
@@ -124,13 +124,13 @@ public class TestGuava {
      * Constraint：约束（18 版本已经不支持）
      */
     @Test
-    public void testConstraint(){
+    public void testConstraint() {
        /* List<String> list = Lists.newArrayList("mother", "abc", "abababab", "near");
         Constraint<String> constraint =new Constraint<String>() {
             @Override
             public String checkElement(String s) {
                 Preconditions.checkNotNull(s);
-                //长度验证 5-10为字符串
+                //长度验证 5-10字符串
                 Preconditions.checkArgument(s.length() >= 5 && s.length() <= 10);
                 return s;
             }
@@ -164,25 +164,25 @@ public class TestGuava {
      * 应用于统计相同元素的出现次数   elementSet() + count(Object)
      */
     @Test
-    public void testMultiset(){
+    public void testMultiset() {
         String[] arr = "this is a cat and that is a mice and where is the food".split(" ");
 
         Multiset<String> multiset = HashMultiset.create();
-        for(String s : arr){
+        for (String s : arr) {
             multiset.add(s);
         }
         Set<String> set = multiset.elementSet();
-        for(String s : set){
+        for (String s : set) {
             System.out.println(s + " --> " + multiset.count(s));
         }
     }
 
     /**
      * Multimap：key 值可以重复
-     *      keySet() + get()
+     * keySet() + get()
      */
     @Test
-    public void testMultimap(){
+    public void testMultimap() {
         Map<String, String> map = new HashMap<String, String>();
         map.put("小红", "一班");
         map.put("小刚", "二班");
@@ -193,13 +193,13 @@ public class TestGuava {
         Multimap<String, String> multimap = ArrayListMultimap.create();
 
         Iterator<Map.Entry<String, String>> iterator = map.entrySet().iterator();
-        while(iterator.hasNext()){
+        while (iterator.hasNext()) {
             // System.out.println(iterator.next());
             Map.Entry<String, String> entry = iterator.next();
             multimap.put(entry.getValue(), entry.getKey());
         }
         Set<String> set = multimap.keySet();
-        for(String s : set){
+        for (String s : set) {
             // System.out.println(s);
             Collection<String> collection = multimap.get(s);
             System.out.println(collection);
@@ -208,10 +208,10 @@ public class TestGuava {
 
     /**
      * BiMap：键和值都唯一，不可重复
-     *      inverse() + get()
+     * inverse() + get()
      */
     @Test
-    public void testBiMap(){
+    public void testBiMap() {
         BiMap<String, String> biMap = HashBiMap.create();
         biMap.put("near", "123@gmail.com");
         biMap.put("game", "whoiam@sina.com");
@@ -236,7 +236,7 @@ public class TestGuava {
      * Tables.transpose() 将 Table 的 rowKey 列和 columnKey 列互换
      */
     @Test
-    public void testTable(){
+    public void testTable() {
         Table<String, String, Integer> table = HashBasedTable.create();
         table.put("小明", "java", 80);
         table.put("小丽", "java", 90);
@@ -303,12 +303,12 @@ public class TestGuava {
         // 获取所有课程的学生成绩信息
         Map<String, Map<String, Integer>> map2 = table.columnMap();
         Set<Map.Entry<String, Map<String, Integer>>> entrySet2 = map2.entrySet();
-        for(Map.Entry<String, Map<String, Integer>> entry : entrySet2){
+        for (Map.Entry<String, Map<String, Integer>> entry : entrySet2) {
             String name = entry.getKey();
             Map<String, Integer> info = entry.getValue();
             System.out.print(name + "\t");
-            for(Map.Entry<String, Integer> scoreMap : info.entrySet()){
-                System.out.print(scoreMap.getKey()+"\t"+scoreMap.getValue()+"\t");
+            for (Map.Entry<String, Integer> scoreMap : info.entrySet()) {
+                System.out.print(scoreMap.getKey() + "\t" + scoreMap.getValue() + "\t");
             }
             System.out.println();
         }

@@ -26,10 +26,10 @@ public class GenericWildcards {
         map.put("102", "hello");
 
         Set<Entry<String, String>> set = map.entrySet();
-        for(Entry<String, String> entry : set){
+        for (Entry<String, String> entry : set) {
             String key = entry.getKey();
             String value = entry.getValue();
-            System.out.println(key+"-->"+value);
+            System.out.println(key + "-->" + value);
         }
 
         /*List []stringList = new ArrayList[10];
@@ -37,7 +37,7 @@ public class GenericWildcards {
         List<String> []stringList = new ArrayList<String>[10];*/
     }
 
-    public void put_1(List<? extends A> list){
+    public void put_1(List<? extends A> list) {
         // 不可用于数据添加
         /*list.add(new A());
         list.add(new B());*/
@@ -46,7 +46,7 @@ public class GenericWildcards {
         list.add(null);
     }
 
-    public void put_2(List<? super B> list){
+    public void put_2(List<? super B> list) {
         // 不可用于添加父类的对象
         // list.add(new A());
         list.add(new B());
@@ -57,7 +57,9 @@ public class GenericWildcards {
         return list;
     }*/
 
-    class A{}
+    class A {
+    }
 
-    class B extends A{}
+    class B extends A {
+    }
 }

@@ -2,6 +2,7 @@ package pro.collection.list;
 
 /**
  * 自定义的一个双向链表
+ * <p>
  * Created by Near on 2015/11/28.
  */
 public class MyLinkedList {
@@ -17,12 +18,12 @@ public class MyLinkedList {
         return first == null;
     }
 
-    public boolean add(Object object) {
+    public boolean add(Object obj) {
         if (first == null) {
-            first = new Node(object, null, null);
+            first = new Node(obj, null, null);
             last = first;
         } else {
-            Node node = new Node(object, null, last);
+            Node node = new Node(obj, null, last);
             last.next = node;
             node.prev = last;
             last = node;
@@ -39,8 +40,9 @@ public class MyLinkedList {
         Node node = null;
         if (!isEmpty()) {
             node = indexOf(index);
+            return node.item;
         }
-        return node.item;
+        return null;
     }
 
     public Object set(int index, Object element) {
@@ -52,9 +54,9 @@ public class MyLinkedList {
         if (!isEmpty()) {
             node = indexOf(index);
         }
-        Object object = node.item;
+        Object oldEmement = node.item;
         node.item = element;
-        return object;
+        return oldEmement;
     }
 
     public void add(int index, Object element) {
@@ -63,8 +65,6 @@ public class MyLinkedList {
                 throw new Exception();
             } catch (Exception e) {
                 System.out.println("IndexOutOfBorderException.");
-            } finally {
-                return;
             }
         }
 
@@ -117,7 +117,7 @@ public class MyLinkedList {
         return node.item;
     }
 
-    public Node indexOf(int index) {
+    private Node indexOf(int index) {
         // 提高遍历查询的效率
         if (index < (size >> 1)) {
             Node node = first;
@@ -147,8 +147,6 @@ public class MyLinkedList {
                 throw new Exception();
             } catch (Exception e) {
                 System.out.println("IndexOutOfBorderException.");
-            } finally {
-                return true;
             }
         }
         return false;
@@ -159,7 +157,7 @@ public class MyLinkedList {
         Node next;
         Node prev;
 
-        public Node(Object item, Node next, Node prev) {
+        Node(Object item, Node next, Node prev) {
             this.item = item;
             this.next = next;
             this.prev = prev;

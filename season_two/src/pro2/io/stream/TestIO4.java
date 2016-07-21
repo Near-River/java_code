@@ -8,6 +8,7 @@ import java.io.*;
  * 基本类型处理流:
  * DataInputStream readXxx() / DataInputStream writeXxx()
  * 读入和写入数据的类型和顺序要一致
+ * <p>
  * Created by Near on 2015/12/3.
  */
 public class TestIO4 {
@@ -27,8 +28,6 @@ public class TestIO4 {
             /*dataOutputStream.writeChars("飞雪连天射白鹿");
             dataOutputStream.writeBytes("飞雪连天射白鹿");*/
             dataOutputStream.flush();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -55,9 +54,7 @@ public class TestIO4 {
             double d = dataInputStream.readDouble();
             long l = dataInputStream.readLong();
             String s = dataInputStream.readUTF();
-            System.out.println(b+"\t"+c+"\t"+d+"\t"+l+"\t"+s);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println(b + "\t" + c + "\t" + d + "\t" + l + "\t" + s);
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -71,4 +68,3 @@ public class TestIO4 {
         }
     }
 }
-

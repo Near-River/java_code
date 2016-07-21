@@ -8,14 +8,14 @@ import java.io.*;
  * 出现乱码的原因：
  * ①编码和解码字符集不统一
  * ②字节缺少，长度丢失
- * Created by Administrator on 2015/12/2.
+ * <p>
+ * Created by Near on 2015/12/2.
  */
 public class TestConverter {
     @Test
     public void test() {
         String str = "杨萧";
         try {
-            // byte[] bytes = str.getBytes("gbk");
             byte[] bytes = str.getBytes("utf-8");
 
             System.out.println(new String(bytes, "utf-8"));
@@ -47,8 +47,6 @@ public class TestConverter {
             }
             bufferedWriter.flush();
             System.out.println("拷贝成功!");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

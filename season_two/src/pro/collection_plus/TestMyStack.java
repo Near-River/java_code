@@ -11,7 +11,7 @@ import java.util.Deque;
  */
 public class TestMyStack {
     @Test
-    public void test(){
+    public void test() {
         MyStack<String> history = new MyStack<String>();
         history.push("www.baidu.com");
         history.push("www.sina.com");
@@ -19,18 +19,18 @@ public class TestMyStack {
 
         System.out.println(history.size());
         String item;
-        while((item = history.pop()) != null){
+        while ((item = history.pop()) != null) {
             System.out.println(item);
         }
         System.out.println(history.size());
     }
 }
 
-class MyStack<E>{
+class MyStack<E> {
     private Deque<E> deque = new ArrayDeque<E>();
     private int capicity;
 
-    public int size(){
+    public int size() {
         return deque.size();
     }
 
@@ -42,19 +42,19 @@ class MyStack<E>{
         this.capicity = capicity;
     }
 
-    public boolean push(E e){
-        if(deque.size() >= capicity){
+    public boolean push(E e) {
+        if (deque.size() >= capicity) {
             return false;
-        } else{
+        } else {
             return deque.offerLast(e);
         }
     }
 
-    public E pop(){
+    public E pop() {
         return deque.pollLast();
     }
 
-    public E peek(){
+    public E peek() {
         return deque.peekLast();
     }
 }

@@ -70,9 +70,8 @@ public class Server2 {
             bw = new BufferedWriter(new OutputStreamWriter(client.getOutputStream()));
             bw.write(response.toString());
             bw.flush();
-
-        } catch (IOException e) {
-        }finally{
+        } catch (IOException ignored) {
+        } finally {
             FileUtils.close(bw);
         }
     }

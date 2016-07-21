@@ -8,6 +8,7 @@ import java.util.Queue;
 /**
  * 使用队列模拟银行存取业务
  * 先进先出策略
+ * <p>
  * Created by Near on 2015/11/30.
  */
 public class TestQueue {
@@ -28,11 +29,11 @@ public class TestQueue {
         System.out.println(queue.size());
     }
 
-    public static void service(Queue<Request> queue) {
+    private static void service(Queue<Request> queue) {
         Request request = null;
         int count = 0;
         while ((request = queue.poll()) != null) {
-            System.out.println("第" + (++count) + "个人在办理业务.");
+            System.out.println("第" + (++count) + "个人需办理业务.");
             request.deposit();
         }
     }

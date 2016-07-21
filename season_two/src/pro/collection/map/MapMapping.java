@@ -7,6 +7,7 @@ import java.util.Map;
 
 /**
  * 分拣存储: 解决一对多的关系
+ * <p>
  * Created by Near on 2015/11/29.
  */
 public class MapMapping {
@@ -29,7 +30,7 @@ public class MapMapping {
         }
     }
 
-    class Letter {
+    private class Letter {
         // 单词名称
         private String name;
         // 出现次数

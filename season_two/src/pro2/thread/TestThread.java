@@ -24,12 +24,14 @@ public class TestThread extends Thread {
             }
         }*/
 
-        /*try {
+        /*
+        try {
             // 线程 tiger 运行完成，线程 rubbit 才可以运行
             tiger.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }*/
+        }
+        */
     }
 }
 

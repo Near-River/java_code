@@ -22,7 +22,7 @@ public class TestGeneric {
 }
 
 /**
- * 自定义泛型类(泛型不可作用于静态属性和方法)
+ * 自定义泛型类(泛型不可直接作用于静态属性和方法)
  *
  * @param <E>
  * @param <T>
@@ -30,11 +30,6 @@ public class TestGeneric {
 class Student<E, T> {
     private E id;
     private T name;
-    // private static E age;
-
-    public E getId() {
-        return id;
-    }
 
     public void setId(E id) {
         this.id = id;
@@ -56,6 +51,12 @@ class Student<E, T> {
         this.name = name;
     }
 
+    public E getId() {
+        return id;
+    }
+
+    // private static E age;
+
     /*public static E fun(){
         return new E();
     }*/
@@ -71,7 +72,7 @@ class User<E> {
     }
 
     public void fun3(E... e) {
-        for(E e1 : e){
+        for (E e1 : e) {
             System.out.println(e1.toString());
             System.out.println(e1.getClass().getName());
         }

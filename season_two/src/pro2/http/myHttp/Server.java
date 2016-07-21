@@ -26,7 +26,7 @@ public class Server {
     }
 
     /**
-     * 接收客户端
+     * 接收客户端请求
      */
     private void receive() {
         try {
@@ -39,7 +39,7 @@ public class Server {
             response.println("<body><h1>Hello World!</h1>" + request.getParameter("name") + "</body></html>");
             response.pushToClient(200);
             response.close();
-        } catch (IOException e) {
+        } catch (IOException ignored) {
         }
     }
 

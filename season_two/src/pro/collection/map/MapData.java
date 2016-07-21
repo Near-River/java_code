@@ -9,13 +9,14 @@ import java.util.Map;
 
 /**
  * 使用 Map 来存放数据记录
+ * <p>
  * Created by Near on 2015/11/28.
  */
 public class MapData {
     List<Map> list = new ArrayList<Map>();
 
     @Test
-    public void test(){
+    public void test() {
         Map map1 = new HashMap();
         map1.put("id", 101);
         map1.put("name", "near");
@@ -23,7 +24,7 @@ public class MapData {
 
         Map map2 = new HashMap();
         map2.put("id", 102);
-        map2.put("name", "kala");
+        map2.put("name", "king");
         map2.put("age", 22);
 
         list.add(map1);
@@ -32,17 +33,17 @@ public class MapData {
         printInfo(list);
     }
 
-    public void printInfo(List<Map> list){
-        for(Map map : list){
-            System.out.println(map.get("id")+"-->"+map.get("name")+"-->"+map.get("age"));
+    public void printInfo(List<Map> list) {
+        for (Map map : list) {
+            System.out.println(map.get("id") + "-->" + map.get("name") + "-->" + map.get("age"));
         }
     }
 }
 
 /**
- * 使用 JavaBean 来对应表结构，使用类对象来存放表记录
+ * 使用 JavaBean 来对应表结构，使用对象来存放表记录
  */
-class User{
+class User {
     private int id;
     private String name;
     private int age;

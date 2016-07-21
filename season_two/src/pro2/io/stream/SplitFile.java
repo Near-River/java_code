@@ -54,12 +54,13 @@ public class SplitFile {
         File dest = new File(destPath);
         dest.mkdirs();
         for (int i = 0; i < size; i++) {
-            this.blockPath.add(dest.getAbsolutePath() + "/" + fileName + "_part" + (i + 1));
+            this.blockPath.add(dest.getAbsolutePath() + File.separator + fileName + "_part_" + (i + 1));
         }
     }
 
     /**
      * 根据目标路径来生成分割文件
+     *
      * @param destPath
      */
     public void split(String destPath) {
@@ -78,6 +79,7 @@ public class SplitFile {
 
     /**
      * 为每个分割块生成对应的分割文件
+     *
      * @param blockIndex
      * @param beginPos
      * @param actualBlockSize
@@ -104,8 +106,6 @@ public class SplitFile {
                 actualBlockSize -= len;
             }
             bufferedOutputStream.flush();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -115,6 +115,7 @@ public class SplitFile {
 
     /**
      * 做文件的合并操作
+     *
      * @param srcDir
      * @param destPath
      */
@@ -140,8 +141,6 @@ public class SplitFile {
                     outputStream.write(bytes, 0, len);
                 }
                 outputStream.flush();
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             } finally {
@@ -181,8 +180,6 @@ public class SplitFile {
                 outputStream.write(bytes, 0, len);
             }
             outputStream.flush();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

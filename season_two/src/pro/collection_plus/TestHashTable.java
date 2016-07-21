@@ -10,7 +10,8 @@ import java.util.Properties;
 
 /**
  * HashTable：
- * 继承类：Properties：只能存储字符串
+ * 子类：Properties：只能存储字符串
+ * <p>
  * Created by Near on 2015/11/30.
  */
 public class TestHashTable {
@@ -18,17 +19,19 @@ public class TestHashTable {
     public void test() {
         Properties properties = new Properties();
 
-       /*
+        /*
         properties.setProperty("username", "root");
         properties.setProperty("password", "123456");
 
         String username = properties.getProperty("username");
         String password = properties.getProperty("password");
 
-        System.out.println(username+": "+password);*/
+        System.out.println(username+": "+password);
+        */
 
         // 生成资源文件
-      /*  try {
+        /*
+        try {
             FileOutputStream fileOutputStream = new FileOutputStream(new File("src/pro/collection_plus/db.properties"));
             try {
                 properties.store(fileOutputStream, "数据库配置");
@@ -37,7 +40,8 @@ public class TestHashTable {
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }*/
+        }
+        */
 
         // 根据当前项目/工程的路径读取资源文件
         try {
@@ -63,7 +67,7 @@ public class TestHashTable {
         Properties properties = new Properties();
         try {
             // 当前根路径为 bin, 使用 "/" 表示
-            // properties.load(TestHashTable.class.getResourceAsStream("/pro/collection_plus/db.properties"));
+            // properties.load(this.getClass().getResourceAsStream("/pro/collection_plus/db.properties"));
 
             // 当前根路径为 bin, 使用 "" 表示，根据当前线程的上下文类加载器来读取资源文件路径
             properties.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("pro/collection_plus/db.properties"));

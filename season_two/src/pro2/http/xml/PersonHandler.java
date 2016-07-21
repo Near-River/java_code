@@ -61,7 +61,7 @@ public class PersonHandler extends DefaultHandler {
 
     @Override
     public void endDocument() throws SAXException {
-        System.out.println("结束文档处理");
+        System.out.println("结束处理文档");
     }
 
     public List<Person> getPersons() {

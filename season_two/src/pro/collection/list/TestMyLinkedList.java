@@ -7,7 +7,7 @@ import org.junit.Test;
  */
 public class TestMyLinkedList {
     @Test
-    public void test(){
+    public void test() {
         Class c = null;
         c = MyLinkedList.class;
         MyLinkedList myLinkedList = null;
@@ -32,9 +32,7 @@ public class TestMyLinkedList {
             System.out.println(str3);
             System.out.println(myLinkedList.size());
 
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
+        } catch (InstantiationException | IllegalAccessException e) {
             e.printStackTrace();
         }
     }
