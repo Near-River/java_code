@@ -27,7 +27,7 @@ public class Sun {
         this.image = image;
     }
 
-    public void draw(Graphics g){
-        g.drawImage(image, (int)x, (int)y, null);
+    public void draw(Graphics g) {
+        g.drawImage(image, (int) x, (int) y, null);
     }
 }

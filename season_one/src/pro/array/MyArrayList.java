@@ -1,8 +1,5 @@
 package pro.array;
 
-import org.junit.Test;
-
-import java.util.ArrayList;
 
 /**
  * 模拟 ArrayList 容器类的实现

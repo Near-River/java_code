@@ -7,7 +7,7 @@ import org.junit.Test;
  */
 public class TestComponent {
     @Test
-    public void test(){
+    public void test() {
         Man man = new Man();
         System.out.println(man.getCar().getColor());
         man.getCar().setColor("blue");
@@ -15,7 +15,7 @@ public class TestComponent {
     }
 }
 
-class Car{
+class Car {
     private String color;
 
     public void setColor(String color) {
@@ -38,7 +38,7 @@ class Car{
     }
 }
 
-class Man{
+class Man {
     private final Car car = new Car("red");
 
     public Car getCar() {

@@ -3,7 +3,6 @@ package pro.file;
 import org.junit.Test;
 
 import java.io.File;
-import java.io.IOException;
 
 /**
  * Created by Near on 2015/11/26.
@@ -11,7 +10,7 @@ import java.io.IOException;
 public class TestFile {
     @Test
     public void test() {
-        File f = new File("E:\\pictures");
+        File f = new File("D:\\demo\\Image");
 
         System.out.println(f.getName());
 
@@ -29,7 +28,7 @@ public class TestFile {
             // System.out.println(fileName);
         }
 
-        File testFile = new File("E:\\课件\\物联网");
+        File testFile = new File("D:\\util\\课件\\物联网");
         filesTree(testFile, 0);
     }
 
@@ -41,7 +40,7 @@ public class TestFile {
     public void filesTree(File file, int level) {
         File temp = null;
 
-        for(int i=0; i<level; i++){
+        for (int i = 0; i < level; i++) {
             System.out.print("——");
         }
 
@@ -49,9 +48,9 @@ public class TestFile {
             System.out.println(file.getName());
         } else {
             System.out.println(file.getName());
-            File [] files = file.listFiles();
-            for(File f : files){
-                filesTree(f, level+1);
+            File[] files = file.listFiles();
+            for (File f : files) {
+                filesTree(f, level + 1);
             }
         }
     }

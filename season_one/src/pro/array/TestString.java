@@ -9,7 +9,7 @@ import java.util.Arrays;
  */
 public class TestString {
     @Test
-    public void test(){
+    public void test() {
         String str1 = new String("haha");
         String str2 = new String("haha");
 
@@ -26,7 +26,7 @@ public class TestString {
          * String 为不可变得字符序列，只可以对字符数组的元素值进行修改
          *        而字符数组对象指向的地址空间是不可变的
          */
-        final char []value = new char[]{'a','b','c'};
+        final char[] value = new char[]{'a', 'b', 'c'};
         System.out.println(Arrays.toString(value));
         value[1] = 'k';
         // value = new char[]{};
@@ -42,6 +42,5 @@ public class TestString {
         sb1.append("java");
         sb1.append(s);
         System.out.println(sb1.toString());
-
     }
 }

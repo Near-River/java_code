@@ -1,14 +1,13 @@
 package pro.array;
 
 import org.junit.Test;
-import pro.array.MyArrayList;
 
 /**
  * Created by Near on 2015/11/24.
  */
 public class TestMyArrayList {
     @Test
-    public void test(){
+    public void test() {
         Class c = null;
         MyArrayList myArrayList = null;
 

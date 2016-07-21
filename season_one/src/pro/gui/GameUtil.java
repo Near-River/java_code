@@ -13,7 +13,7 @@ public class GameUtil {
     private GameUtil() {
     }
 
-    public static Image getImage(String context){
+    public static Image getImage(String context) {
 
         Image image = Toolkit.getDefaultToolkit().getImage(GameUtil.class.getClassLoader().getResource(context));
         return image;

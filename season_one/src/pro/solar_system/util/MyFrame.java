@@ -8,15 +8,16 @@ import java.awt.event.WindowEvent;
 /**
  * Created by Near on 2015/11/27.
  */
-public class MyFrame extends JFrame implements Runnable{
+public class MyFrame extends JFrame implements Runnable {
     private Image offScreenImage = null;
 
     /**
      * 双缓冲技术解决屏幕闪烁
+     *
      * @param g
      */
     public void update(Graphics g) {
-        if(offScreenImage == null)
+        if (offScreenImage == null)
             offScreenImage = this.createImage(Constant.WINDOW_WIDTH, Constant.WINDOW_HEIGHT);
 
         Graphics gOff = offScreenImage.getGraphics();
@@ -25,7 +26,7 @@ public class MyFrame extends JFrame implements Runnable{
         g.drawImage(offScreenImage, 0, 0, null);
     }
 
-    public void init(){
+    public void init() {
         this.setTitle(Constant.Title);
         this.setSize(Constant.WINDOW_WIDTH, Constant.WINDOW_HEIGHT);
         this.setLocation(200, 120);
@@ -41,7 +42,7 @@ public class MyFrame extends JFrame implements Runnable{
 
     @Override
     public void run() {
-        while(true){
+        while (true) {
             repaint();
             try {
                 Thread.sleep(300);

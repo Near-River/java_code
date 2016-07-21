@@ -41,7 +41,7 @@ public class PlaneFrame extends MyFrame {
     public void paint(Graphics g) {
         super.paint(g);
         g.drawImage(background, 0, 0, null);
-        if(plane.isAlive()){
+        if (plane.isAlive()) {
             plane.draw(g);
         }
 
@@ -73,6 +73,8 @@ public class PlaneFrame extends MyFrame {
                     case 1:
                         printInfo(g, "菜鸟", 50, 100, 200, Color.white);
                         break;
+                    case 2:
+                        printInfo(g, "大师", 50, 100, 200, Color.white);
                 }
             }
         }
@@ -85,7 +87,6 @@ public class PlaneFrame extends MyFrame {
         g.setFont(f);
         g.drawString(str, x, y);
         g.setColor(c);
-
     }
 
     class KeyMonitor extends KeyAdapter {

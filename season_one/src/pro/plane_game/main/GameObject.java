@@ -11,8 +11,8 @@ public class GameObject {
     int height, width;
     int speed;
 
-    public Rectangle getRect(){
-        return  new Rectangle((int)x,(int)y, width, height);
+    public Rectangle getRect() {
+        return new Rectangle((int) x, (int) y, width, height);
     }
 
     public GameObject() {

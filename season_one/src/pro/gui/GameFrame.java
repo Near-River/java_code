@@ -8,10 +8,10 @@ import java.awt.event.WindowEvent;
 /**
  * Created by Near on 2015/11/27.
  */
-public class GameFrame extends JFrame implements Runnable{
+public class GameFrame extends JFrame implements Runnable {
     private double x = 100, y = 100;
     private int speed = 8;
-    private double degree=Math.PI/3;
+    private double degree = Math.PI / 3;
     private Image image = null;
 
     private int _x = 1, _y = 1;
@@ -20,7 +20,7 @@ public class GameFrame extends JFrame implements Runnable{
         image = GameUtil.getImage("pro/gui/sun.jpg");
     }
 
-    public void init(){
+    public void init() {
         this.setTitle("Welcome");
         this.setSize(500, 500);
         this.setLocation(500, 150);
@@ -41,11 +41,11 @@ public class GameFrame extends JFrame implements Runnable{
 
         /*g.setColor(Color.yellow);
         g.fillOval(x, y, 50, 50);*/
-        g.drawImage(image, (int)x, (int)y, null);
+        g.drawImage(image, (int) x, (int) y, null);
         changePosition();
     }
 
-    public void changePosition(){
+    public void changePosition() {
         // 做往复运动
         /*if(x >= 500-30){
             _x = -1;
@@ -70,21 +70,21 @@ public class GameFrame extends JFrame implements Runnable{
         degree +=0.1;*/
 
         // 做弹珠运动
-        x += speed*Math.cos(degree);
-        y += speed*Math.sin(degree);
+        x += speed * Math.cos(degree);
+        y += speed * Math.sin(degree);
 
-        if(y>500-30 || y<30){
+        if (y > 500 - 30 || y < 30) {
             degree = -degree;
         }
 
-        if(x<0 || x>500-30){
-            degree = Math.PI-degree;
+        if (x < 0 || x > 500 - 30) {
+            degree = Math.PI - degree;
         }
     }
 
     @Override
     public void run() {
-        while(true){
+        while (true) {
             repaint();
             try {
                 Thread.sleep(50);
@@ -94,7 +94,7 @@ public class GameFrame extends JFrame implements Runnable{
         }
     }
 
-    public static void main(String []args){
+    public static void main(String[] args) {
         GameFrame gameFrame = new GameFrame();
         Thread thread = new Thread(gameFrame);
         gameFrame.init();

@@ -2,14 +2,13 @@ package pro.array;
 
 import org.junit.Test;
 
-import java.util.Arrays;
 
 /**
  * Created by Near on 2015/11/25.
  */
 public class TestWrappedClass {
     @Test
-    public void test(){
+    public void test() {
         Integer a1 = new Integer(1000);
         Integer a2 = 1000;  // jdk5.0之后  引入自动装箱机制，编译器帮助我们改进代码：Integer a = new Integer(1000);
 
@@ -19,8 +18,8 @@ public class TestWrappedClass {
 
         System.out.println(c);
 
-        Integer  d1 = 1234;
-        Integer  d2 = 1234;
+        Integer d1 = 1234;
+        Integer d2 = 1234;
 
         System.out.println(d1 == d2);
         System.out.println(d1.equals(d2));
