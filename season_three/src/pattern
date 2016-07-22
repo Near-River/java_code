@@ -93,7 +93,7 @@
             FlyWeightFactory 享元工厂类：创建并管理享元对象，享元池一般设计成键值对
             FlyWeight 抽象享元类：接口或抽象类，声明公共方法，这些方法可以向外界提供对象的内部状态，
                 同时设置外部状态
-            ContreateFlyWeight 具体享元类：为内部状态提供成员变量进行存储
+            ConcreateFlyWeight 具体享元类：为内部状态提供成员变量进行存储
             UnsharedConcreteFlyWeight 非共享享元类：不能被共享的子类可以设计为非共享享元类
         优点：
             极大地减少内存对象的数量，提高系统性能

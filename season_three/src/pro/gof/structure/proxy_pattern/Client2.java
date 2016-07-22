@@ -57,7 +57,7 @@ class StarHandler implements InvocationHandler {
     }
 
     /**
-     * 抽象角色中声明的所有方法都被转移到调用处理器（Handler）的一个集中的方法中做处理
+     * 抽象角色中声明的所有方法都被转移到处理器（Handler）的一个集中的方法中做处理
      * 实现更加灵活和统一的处理众多的方法
      *
      * @param proxy  代理对象

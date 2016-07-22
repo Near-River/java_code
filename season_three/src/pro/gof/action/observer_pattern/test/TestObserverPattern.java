@@ -19,6 +19,7 @@ public class TestObserverPattern {
         mySubject.addObserver(observer2);
 
         mySubject.setState(State.UP);
+        mySubject.setState(State.RIGHT);
 
         mySubject.deleteObserver(observer);
         mySubject.setState(State.DOWN);

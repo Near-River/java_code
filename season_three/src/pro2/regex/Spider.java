@@ -20,17 +20,17 @@ public class Spider {
         String context = getUrlContext(s_url, charset);
 
         // 捕获组的方向引用 + 开启非贪婪模式
-        String s_pattern = "<a href=\"([\\s\\S]*?)\"";
+        String s_pattern = "<a href=\"(http://.*?)\"";
         Pattern pattern = Pattern.compile(s_pattern);
 
         Matcher matcher = pattern.matcher(context);
-        while(matcher.find()){
+        while (matcher.find()) {
             System.out.println(matcher.group(1));
         }
     }
 
 
-    public static String getUrlContext(String s_url, String charset) {
+    private static String getUrlContext(String s_url, String charset) {
         URL url = null;
         BufferedReader bufferedReader = null;
         StringBuilder context = new StringBuilder();

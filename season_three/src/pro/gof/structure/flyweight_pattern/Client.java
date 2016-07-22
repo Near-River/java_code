@@ -13,16 +13,20 @@ public class Client {
     public void test() {
         Chess chess = ChessFactory.getChess("black");
         Chess chess2 = ChessFactory.getChess("black");
+        Chess chess3 = ChessFactory.getChess("white");
 
         System.out.println(chess.hashCode());
         System.out.println(chess2.hashCode());
+        System.out.println(chess3.hashCode());
 
         chess.setCoordinate(new Coordinate(1, 2));
         chess2.setCoordinate(new Coordinate(2, 1));
+        chess3.setCoordinate(new Coordinate(2, 2));
 
         // 外部状态相对独立，不影响内部状态
         System.out.println(chess.hashCode());
         System.out.println(chess2.hashCode());
+        System.out.println(chess3.hashCode());
     }
 }
 
@@ -55,7 +59,7 @@ interface Chess {
 }
 
 /**
- * ContreateFlyWeight 具体享元类
+ * ConcreateFlyWeight 具体享元类
  * 为内部状态提供成员变量进行存储
  */
 class ConcreateChess implements Chess {

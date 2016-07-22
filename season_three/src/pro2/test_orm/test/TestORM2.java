@@ -48,4 +48,5 @@ public class TestORM2 {
         User user = (User) query.queryById(User.class, 105);
         System.out.println(user);
     }
+
 }

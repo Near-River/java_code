@@ -58,8 +58,7 @@ public class TableContext {
             while (tableRet.next()) {
                 String tableName = (String) tableRet.getObject("TABLE_NAME");
 
-                TableInfo tableInfo = new TableInfo(tableName, new ArrayList<>()
-                        , new HashMap<>());
+                TableInfo tableInfo = new TableInfo(tableName, new ArrayList<>(), new HashMap<>());
 
                 /*
                 查询表中的所有字段
@@ -91,8 +90,12 @@ public class TableContext {
                 }
 
                 tables.put(tableName, tableInfo);
-                /*// 生成PO包下的所有PO类
-                FileUtils.createPoFile(tableInfo, new MysqlTypeConvertor());*/
+
+
+                /*
+                // 生成PO包下的所有PO类
+                FileUtils.createPoFile(tableInfo, new MysqlTypeConvertor());
+                */
             }
         } catch (SQLException e) {
             e.printStackTrace();

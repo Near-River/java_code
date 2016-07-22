@@ -52,7 +52,6 @@ public class FieldGetSetInfo {
     }
 
     public FieldGetSetInfo(String fieldInfo, String getterInfo, String setterInfo) {
-
         this.fieldInfo = fieldInfo;
         this.getterInfo = getterInfo;
         this.setterInfo = setterInfo;

@@ -28,10 +28,10 @@ public class TestORM {
     }
 
     @Test
-     public void test2() {
+    public void test2() {
         Map<String, TableInfo> tables = TableContext.getTables();
-        TableInfo tableInfo = tables.get("emp");
-        /*String s = FileUtils.createPoCode(tableInfo, new MysqlTypeConvertor());
+        /*TableInfo tableInfo = tables.get("emp");
+        String s = FileUtils.createPoCode(tableInfo, new MysqlTypeConvertor());
         System.out.println(s);*/
 
         /*FileUtils.createPoFile(tableInfo, new MysqlTypeConvertor());
@@ -39,7 +39,7 @@ public class TestORM {
         TableContext.loadPOTables();
         System.out.println(TableContext.getPoTables().size());*/
 
-        for(TableInfo table : tables.values()){
+        for (TableInfo table : tables.values()) {
             FileUtils.createPoFile(table, new MysqlTypeConvertor());
         }
     }
@@ -85,6 +85,5 @@ public class TestORM {
 
         Object obj = query.queryValue("select count(*) from user", null);
         System.out.println(obj);
-        System.out.println(TableContext.getPoTables().size());
     }
 }

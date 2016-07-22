@@ -12,7 +12,7 @@ public class TestClassLoad {
 
     @Test
     public void test(){
-        System.out.println("调用TestClassLoad的main方法");
+        System.out.println("调用TestClassLoad的test方法");
         // 主动引用
 		// new A();
 		// System.out.println(A.width);

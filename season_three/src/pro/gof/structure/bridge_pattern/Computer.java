@@ -11,7 +11,7 @@ public abstract class Computer {
         this.brand = brand;
     }
 
-    public void sale(){
+    public void sale() {
         // brand.info();
     }
 }
@@ -24,7 +24,7 @@ class DeskTop extends Computer {
     @Override
     public void sale() {
         super.sale();
-        System.out.println("销售"+brand.getBrand()+"台式机");
+        System.out.println("销售" + brand.getBrand() + "台式机");
     }
 }
 
@@ -36,6 +36,6 @@ class LapTop extends Computer {
     @Override
     public void sale() {
         super.sale();
-        System.out.println("销售"+brand.getBrand()+"笔记本电脑");
+        System.out.println("销售" + brand.getBrand() + "笔记本电脑");
     }
 }

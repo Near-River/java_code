@@ -21,14 +21,14 @@ public class Client {
  * 负责与具体的策略类打交道
  * 具体算法由客户端决定
  */
-class Context{
+class Context {
     private Strategy strategy;
 
     public Context(Strategy strategy) {
         this.strategy = strategy;
     }
 
-    public void printPrice(double price){
+    public void printPrice(double price) {
         System.out.println("您的报价：" + strategy.getPrice(price));
     }
 }

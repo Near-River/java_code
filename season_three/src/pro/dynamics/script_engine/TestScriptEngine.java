@@ -12,6 +12,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 
 /**
  * Created by near on 2015/12/8.
@@ -52,9 +53,7 @@ public class TestScriptEngine {
             for(String s : list){
                 System.out.println(s);
             }*/
-        } catch (ScriptException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
+        } catch (ScriptException | NoSuchMethodException e) {
             e.printStackTrace();
         }
     }
@@ -68,9 +67,7 @@ public class TestScriptEngine {
             fileReader = new FileReader(new File(url.getPath()));
             Object object = scriptEngine.eval(fileReader);
             System.out.println(object);
-        } catch (ScriptException e) {
-            e.printStackTrace();
-        } catch (FileNotFoundException e) {
+        } catch (ScriptException | FileNotFoundException e) {
             e.printStackTrace();
         } finally {
             if (fileReader != null) {

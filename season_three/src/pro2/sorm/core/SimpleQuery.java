@@ -212,11 +212,7 @@ public abstract class SimpleQuery implements Cloneable {
                         }
                         list.add(rowObject);
                     }
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                } catch (InstantiationException e) {
-                    e.printStackTrace();
-                } catch (IllegalAccessException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 } finally {
                     SqlUtils.close(resultSet, preparedStatement, connection);
@@ -297,7 +293,7 @@ public abstract class SimpleQuery implements Cloneable {
     /**
      * 回调函数接口
      */
-    interface CallBack {
+    private interface CallBack {
         /**
          * 回调函数，处理查询并返回结果
          *

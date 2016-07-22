@@ -59,7 +59,7 @@ public class TestRegex {
 
     @Test
     public void test4() {
-        String str = "yang123&hello4321*wahaha135";
+        String str = "yang123&hello4321*wahaha";
         String s_pattern = "[0-9]+";
 
         Pattern pattern = Pattern.compile(s_pattern);

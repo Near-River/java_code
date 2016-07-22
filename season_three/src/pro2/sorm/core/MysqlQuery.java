@@ -178,11 +178,7 @@ public class MysqlQuery implements Query {
                 }
                 list.add(rowObject);
             }*/
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             SqlUtils.close(resultSet, preparedStatement, connection);

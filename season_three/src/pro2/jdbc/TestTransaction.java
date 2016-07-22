@@ -73,9 +73,7 @@ public class TestTransaction {
                 System.out.print((char) temp);
             }
             reader.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (SQLException | IOException e) {
             e.printStackTrace();
         } finally {
             SqlUtils.close(resultSet, preparedStatement, connection);
@@ -117,9 +115,7 @@ public class TestTransaction {
 
             outputStream.close();
             inputStream.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (SQLException | IOException e) {
             e.printStackTrace();
         } finally {
             SqlUtils.close(resultSet, preparedStatement, connection);

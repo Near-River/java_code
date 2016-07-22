@@ -49,17 +49,12 @@ class MyAggregate {
 
             @Override
             public Object next() {
-                cursor++;
-                Object object = list.get(cursor);
-                return object;
+                return list.get(++cursor);
             }
 
             @Override
             public boolean hasNext() {
-                if (cursor + 1 < list.size()) {
-                    return true;
-                }
-                return false;
+                return cursor + 1 < list.size();
             }
 
             @Override

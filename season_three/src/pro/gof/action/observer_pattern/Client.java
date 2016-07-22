@@ -19,6 +19,7 @@ public class Client {
 
         // 目标对象改变状态并及时发出广播
         subject.setState(State.DOWN);
+        subject.setState(State.UP);
     }
 }
 
@@ -74,7 +75,7 @@ class ObserverA extends Observer {
     @Override
     public void update(Subject subject) {
         state = ((ConcreteSubject) subject).getState();
-        System.out.println("观察者状态更新："+state);
+        System.out.println("观察者状态更新：" + state);
     }
 }
 

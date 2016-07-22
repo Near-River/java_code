@@ -69,8 +69,6 @@ class MyClassLoaderPlus extends ClassLoader {
             }
             byteArrayOutputStream.flush();
             return byteArrayOutputStream.toByteArray();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

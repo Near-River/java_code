@@ -28,11 +28,7 @@ public class ReflectUtils {
             clazz = object.getClass();
             method = clazz.getDeclaredMethod("get" + StringUtils.upperCaseToFirstChar(fieldName), null);
             keyValue = method.invoke(object, null);
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             return keyValue;
@@ -55,9 +51,7 @@ public class ReflectUtils {
             field = clazz.getDeclaredField(fieldName);
             field.setAccessible(true);
             keyValue = field.get(object);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (NoSuchFieldException e) {
+        } catch (IllegalAccessException | NoSuchFieldException e) {
             e.printStackTrace();
         } finally {
             return keyValue;
@@ -65,7 +59,7 @@ public class ReflectUtils {
     }
 
     /**
-     * * 根据传入的字段名称、字段类型、字段值以及目标对象本身为目标对象的属性赋值
+     * 根据传入的字段名称、字段类型、字段值以及目标对象本身为目标对象赋值
      *
      * @param fieldName  字段名称
      * @param fieldType  字段类型
@@ -80,11 +74,7 @@ public class ReflectUtils {
             method = clazz.getDeclaredMethod("set" + StringUtils.upperCaseToFirstChar(fieldName), fieldType);
 
             method.invoke(object, fieldValue);
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -106,11 +96,7 @@ public class ReflectUtils {
             method = clazz.getDeclaredMethod("set" + StringUtils.upperCaseToFirstChar(fieldName), fieldValue.getClass());
 
             method.invoke(object, fieldValue);
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

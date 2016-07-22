@@ -16,6 +16,7 @@ public class TestAnnotation {
         date.toLocaleString();
 
         demo();
+        demo2();
     }
 
     @MyAnnotation()
@@ -28,11 +29,11 @@ public class TestAnnotation {
     }
 
     @Deprecated
-    public void demo() {
+    private void demo() {
     }
 
     @SuppressWarnings(value = {"deprecation", "unchecked"})
-    public void demo2() {
+    private void demo2() {
         List list = new ArrayList();
 
         Date date = new Date();

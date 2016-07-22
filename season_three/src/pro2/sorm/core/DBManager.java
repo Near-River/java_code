@@ -40,7 +40,6 @@ public class DBManager {
             configure.setPoPackage(properties.getProperty("poPackage"));
             configure.setPoolMaxSize(properties.getProperty("poolMaxSize"));
             configure.setPoolMinSize(properties.getProperty("poolMinSize"));
-
         } catch (IOException e) {
             System.out.println("资源文件加载发生异常");
             e.printStackTrace();

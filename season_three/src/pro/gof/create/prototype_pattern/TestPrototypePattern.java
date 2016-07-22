@@ -64,6 +64,7 @@ public class TestPrototypePattern {
 
             objectInputStream = new ObjectInputStream(new ByteArrayInputStream(bytes));
             Sheep sheep2 = (Sheep) objectInputStream.readObject();
+
             System.out.println(sheep);
             System.out.println(sheep2);
             sheep.setBirtyday(new Date(999999999L));
@@ -73,9 +74,7 @@ public class TestPrototypePattern {
 
             objectInputStream.close();
             objectOutputStream.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }

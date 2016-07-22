@@ -7,7 +7,7 @@ import org.junit.Test;
  */
 public class TestCompositePattern {
     @Test
-    public void test(){
+    public void test() {
         Folder dir, dir2;
         AbstractFile file1, file2, file3, file4;
         dir = new Folder("我的收藏");
@@ -22,6 +22,7 @@ public class TestCompositePattern {
         dir.getList().add(dir2);
         dir2.getList().add(file1);
         dir2.getList().add(file2);
+
         dir.killVirus();
     }
 }

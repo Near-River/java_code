@@ -46,11 +46,7 @@ public class TestJAVAssist {
 
             // 将创建好的类写到磁盘目录下
             ctClass.writeFile("D:/IdeaProjects/Java_Code/Season_three/src/");
-        } catch (CannotCompileException e) {
-            e.printStackTrace();
-        } catch (NotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (CannotCompileException | NotFoundException | IOException e) {
             e.printStackTrace();
         }
     }
@@ -73,7 +69,7 @@ public class TestJAVAssist {
             System.out.println(ctClass.getInterfaces());
 
             // 生成新的方法
-            // CtMethod ctMethod = CtMethod.make("public void add(int a, int b){return $1+$2;}", ctClass);
+            // CtMethod ctMethod = CtMethod.make("public int add(int a, int b){return $1+$2;}", ctClass);
             CtMethod ctMethod = new CtMethod(CtClass.intType, "add",
                     new CtClass[]{CtClass.intType, CtClass.intType}, ctClass);
             // 设置访问权限
@@ -88,19 +84,7 @@ public class TestJAVAssist {
 
             Object result = method.invoke(object, 10, 20);
             System.out.println(result);
-        } catch (CannotCompileException e) {
-            e.printStackTrace();
-        } catch (NotFoundException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -118,17 +102,7 @@ public class TestJAVAssist {
             Method method = c.getDeclaredMethod("sayHello", null);
 
             method.invoke(object, null);
-        } catch (NotFoundException e) {
-            e.printStackTrace();
-        } catch (CannotCompileException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -147,15 +121,7 @@ public class TestJAVAssist {
             Field field = c.getDeclaredField("sex");
             field.set(object, new Integer(21));
             System.out.println(field.get(object));
-        } catch (NotFoundException e) {
-            e.printStackTrace();
-        } catch (CannotCompileException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (NoSuchFieldException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -175,17 +141,7 @@ public class TestJAVAssist {
             Constructor con = c.getDeclaredConstructor();
             Object object = con.newInstance();
             System.out.println((Student) object);
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (CannotCompileException e) {
-            e.printStackTrace();
-        } catch (NotFoundException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

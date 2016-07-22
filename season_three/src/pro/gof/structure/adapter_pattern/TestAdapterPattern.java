@@ -7,7 +7,7 @@ import org.junit.Test;
  */
 public class TestAdapterPattern {
     @Test
-    public void test(){
+    public void test() {
         Out out = new Keyboard();
         USB usb = new Adapter(out);
         Computer computer = new Computer(usb);

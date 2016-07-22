@@ -24,7 +24,7 @@ public class TestReflect {
             System.out.println(c1 == c2);
 
             // 数组的数据类型和数组维度不同，则对应的 Class 对象不同
-            int[] arr = new int[10];
+            double[] arr = new double[10];
             int[] arr2 = new int[20];
             int[][] arr3 = new int[10][];
             // System.out.println(arr.getClass() == arr2.getClass());
@@ -66,11 +66,7 @@ public class TestReflect {
                 System.out.println(constructor);
             }
             System.out.println(c.getDeclaredConstructor(String.class, String.class, int.class));
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (NoSuchFieldException e) {
+        } catch (ClassNotFoundException | NoSuchFieldException | NoSuchMethodException e) {
             e.printStackTrace();
         }
     }
@@ -98,25 +94,16 @@ public class TestReflect {
             Field field = c.getDeclaredField("id");
             // 私有属性不可以直接修改
             // field.set(student, "999");
+
             // 禁用 Java 语言的安全检查, 允许修改私有属性
             field.setAccessible(true);
             field.set(student, "999");
             System.out.println(field.get(student));
             System.out.println(student);
 
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (NoSuchFieldException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
+
 }

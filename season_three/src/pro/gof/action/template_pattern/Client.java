@@ -26,21 +26,21 @@ public class Client {
 /**
  * 模拟银行办理业务流程
  */
-abstract class Bank{
-    protected void takeNumber(){
+abstract class Bank {
+    protected void takeNumber() {
         System.out.println("排队取号");
     }
 
     protected abstract void transact();
 
-    protected void evaluate(){
+    protected void evaluate() {
         System.out.println("反馈评分");
     }
 
     /**
      * 模板方法
      */
-    public void process(){
+    public void process() {
         this.takeNumber();
         this.transact();
         this.evaluate();

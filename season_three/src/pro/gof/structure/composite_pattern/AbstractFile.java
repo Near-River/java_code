@@ -61,7 +61,7 @@ class Folder implements AbstractFile {
     @Override
     public void killVirus() {
         System.out.println("查杀文件夹：" + dirName);
-        for(AbstractFile file : list){
+        for (AbstractFile file : list) {
             file.killVirus();
         }
     }

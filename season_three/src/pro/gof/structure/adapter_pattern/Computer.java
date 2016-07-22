@@ -10,7 +10,7 @@ public class Computer {
         this.usb = usb;
     }
 
-    public void run(){
+    public void run() {
         usb.handleRequest();
     }
 }
@@ -43,7 +43,7 @@ class Adapter implements USB {
 /**
  * 目标接口
  */
-interface Out{
+interface Out {
     void request();
 }
 

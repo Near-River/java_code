@@ -127,6 +127,7 @@ public class FileUtils {
      * @param io  欲关闭的文件流
      * @param <T> 继承Closeable类的泛型类型
      */
+    @SafeVarargs
     public static <T extends Closeable> void close(T... io) {
         for (Closeable closeable : io) {
             if (closeable != null) {

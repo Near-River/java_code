@@ -5,6 +5,7 @@ package pro.gof.structure.composite_pattern;
  * TestCase（叶子构件）
  * TestUnite（容器构建）
  * Test 接口（抽象构件）
+ * <p>
  * Created by near on 2015/12/12.
  */
 // 抽象构件
@@ -18,8 +19,10 @@ interface Leaf extends Component {
 }
 
 // 容器构建
-interface  Composite extends Component {
-    void add(Composite composite);
-    void remove(Composite composite);
+interface Composite extends Component {
+    void add(Component component);
+
+    void remove(Component component);
+
     Component getChild(int index);
 }

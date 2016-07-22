@@ -60,8 +60,9 @@ public class DBConnPool {
     public synchronized void closeConnection(Connection connection) {
         if (pool.size() >= POOL_MAX_SIZE) {
             SqlUtils.close(connection);
+        } else {
+            // 将数据库连接对象放回连接池
+            pool.add(connection);
         }
-        // 将数据库连接对象放回连接池
-        pool.add(connection);
     }
 }

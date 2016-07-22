@@ -4,12 +4,10 @@ import org.junit.Test;
 
 import java.io.*;
 import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * 使用反射和反序列化破解单例模式
- * 如何防止漏洞 ?
+ * 使用反射和反序列化破解单例模式  如何防止漏洞 ?
  * Created by near on 2015/12/10.
  */
 public class TestSingletonPattern {
@@ -25,13 +23,7 @@ public class TestSingletonPattern {
 
             System.out.println(singletonDemo1.hashCode());
             System.out.println(singletonDemo2.hashCode());
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -54,9 +46,7 @@ public class TestSingletonPattern {
 
             objectInputStream.close();
             objectOutputStream.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }

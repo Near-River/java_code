@@ -35,6 +35,7 @@ public class SingletonPattern {
         SingletonDemo5 singletonDemo2 = SingletonDemo5.INSTANCE;
 
         System.out.println(singletonDemo1 == singletonDemo2);
+        System.out.println(singletonDemo1.getClass().getName());
     }
 }
 
@@ -59,20 +60,19 @@ class SingletonDemo1 {
 class SingletonDemo2 {
     private static SingletonDemo2 instance = null;
 
+    private SingletonDemo2() {
+    }
+
     public static synchronized SingletonDemo2 getInstance() {
         if (instance == null) {
             instance = new SingletonDemo2();
         }
         return instance;
     }
-
-    private SingletonDemo2() {
-    }
 }
 
 /**
- * 双重检测锁模式
- * 不推荐使用
+ * 双重检测锁模式 不推荐使用
  */
 class SingletonDemo3 {
     private static SingletonDemo3 instance = null;
@@ -103,14 +103,14 @@ class SingletonDemo3 {
  */
 class SingletonDemo4 {
     private static class SingletonDemo4Instance {
-        private static /*final*/ SingletonDemo4 instance = new SingletonDemo4();
+        private static final SingletonDemo4 instance = new SingletonDemo4();
+    }
+
+    private SingletonDemo4() {
     }
 
     public static SingletonDemo4 getInstance() {
         return SingletonDemo4Instance.instance;
-    }
-
-    private SingletonDemo4() {
     }
 }
 

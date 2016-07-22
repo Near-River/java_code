@@ -31,7 +31,7 @@ class MyClassLoader extends ClassLoader {
             // 采用双亲委托机制
             try {
                 c = this.getParent().loadClass(name);
-            } catch (ClassNotFoundException e) {
+            } catch (ClassNotFoundException ignored) {
             } finally {
                 if (c != null) {
                     return c;
@@ -67,8 +67,6 @@ class MyClassLoader extends ClassLoader {
             }
             byteArrayOutputStream.flush();
             return byteArrayOutputStream.toByteArray();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

@@ -19,17 +19,16 @@ public class TestCRUD {
 
     /**
      * 封装数据库的连接方法
+     *
      * @return
      */
-    public static Connection getConnection(){
+    public static Connection getConnection() {
         try {
             // 加载驱动
             Class.forName("com.mysql.jdbc.Driver");
             // 获得连接(内部使用 Socket 进行通信)
             connection = DriverManager.getConnection(url, userName, password);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
+        } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
         return connection;
@@ -37,6 +36,7 @@ public class TestCRUD {
 
     /**
      * 封装关闭方法
+     *
      * @param autoCloseables
      */
     public static void close(AutoCloseable... autoCloseables) {
@@ -108,7 +108,7 @@ public class TestCRUD {
             connection.setAutoCommit(false);
             statement = connection.createStatement();
             sql = "insert into test values(\"hahaha\")";
-            for(int i=0; i<20000; i++){
+            for (int i = 0; i < 20000; i++) {
                 statement.addBatch(sql);
             }
             // 执行批处理
